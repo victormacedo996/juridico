@@ -1,17 +1,46 @@
 package br.senac.juridico.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class AnaliseJuridico {
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class AnaliseJuridico implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "solicitacao_analise_id", nullable = false)
 	private int Id;
+	
+	@Column(name = "solicitacao_analise_numero", nullable = false)
 	private int AnaliseNumero;
+	
+	@Column(name = "solicitacao_analise_data_registro", nullable = false)
 	private Date AnaliseDataRegistro;
+	
+	@Column(name = "solicitacao_analise_titulo", nullable = false)
 	private String Titulo;
+	
+	@Column(name = "solicitacao_analise_observacao")
 	private String Observacao;
+	
+	@Column(name = "solicitacao_analise_status", nullable = false)
 	private int Status;
 	
-	//private solicitacao solicitacaoTipoId;
-	//private Usuario usuarioId;
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name = "solicitacao_tipo_id")
+	private TipoSolicitacao tipoSolicitacao;
 	
 	public int getAlalise() {
 		return Id;

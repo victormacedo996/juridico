@@ -1,6 +1,8 @@
 package br.senac.juridico.model;
 
 import java.io.Serializable;
+
+
 import jakarta.persistence.*;
 
 @Entity

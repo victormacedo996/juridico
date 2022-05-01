@@ -1,10 +1,33 @@
 package br.senac.juridico.model;
 
-public class TipoSolicitacao {
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class TipoSolicitacao implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "solicitacao_tipo_id", nullable = false)
 	private int Id;
+	
+	@Column(name = "solicitacao_tipo_descricao", nullable = false)
 	private String Descricao;
+	
+	@Column(name = "solicitacao_tipo_prazo", nullable = false)
 	private int TipoPrazo;
+	
+	@Column(name = "solicitacao_tipo_status", nullable = false)
 	private int TipoStatus;
+	
+	
 	
 	public int getId() {
 		return Id;
