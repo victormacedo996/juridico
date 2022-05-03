@@ -15,4 +15,8 @@ export class CadastroRequisicaoComponent implements OnInit {
   closeModal(){
     this.onCloseModal.emit(false);
   }
+  salvar(){
+    alert('criar request para api')
+    this.closeModal()
+  }
 }
