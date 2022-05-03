@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cadastro-requisicao',
@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroRequisicaoComponent implements OnInit {
 
   constructor() { }
+  @Output() onCloseModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   ngOnInit(): void {
   }
-
+  closeModal(){
+    this.onCloseModal.emit(false);
+  }
 }

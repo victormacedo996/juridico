@@ -11,10 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./requisicao.component.css']
 })
 export class RequisicaoComponent implements OnInit {
-
+  showModal = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  exibirModal(){
+    this.showModal = !this.showModal
+  }
+
+  fecharModal(event:boolean){
+    this.showModal = event;
+  }
+  
 }
