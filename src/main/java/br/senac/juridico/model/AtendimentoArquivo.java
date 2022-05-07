@@ -26,6 +26,4 @@ public class AtendimentoArquivo implements Serializable{
 
 	@Column(name = "arquivo_id", nullable = false)
 	private Integer arquivo_id;
-
-
 }
