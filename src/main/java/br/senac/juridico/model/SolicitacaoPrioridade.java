@@ -12,30 +12,16 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "solicitacao_prioridade")
 public class SolicitacaoPrioridade implements Serializable{
-<<<<<<< HEAD
-
-	/**
-	 * 
-	 */
-=======
->>>>>>> temp
 	private static final long serialVersionUID = -6166909897933796410L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "solicitacao_prioridade_id", nullable = false)
 	private Integer id;
-<<<<<<< HEAD
-	
-	@Column(name = "solicitacao_prioridade_descricao", nullable = false)
-	private String descricao;
-	
-=======
 
 	@Column(name = "solicitacao_prioridade_descricao", nullable = false)
 	private String descricao;
 
->>>>>>> temp
 	@Column(name = "solicitacao_prioridade_status", nullable = false)
 	private int status;
 
@@ -62,15 +48,5 @@ public class SolicitacaoPrioridade implements Serializable{
 	public void setStatus(int status) {
 		this.status = status;
 	}
-<<<<<<< HEAD
-	
-	
-	
-	
-	
-	
-}
-=======
 
 }
->>>>>>> temp

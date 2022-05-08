@@ -9,15 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 import br.senac.juridico.model.AtendimentoRegistro;
 
 public interface AtendimentoRegistroRepository extends JpaRepository<AtendimentoRegistro, Integer>{
-<<<<<<< HEAD
-	
-	@Query(value = "SELECT * FROM atendimento_registro WHERE atendimento_registro_status >= 0", nativeQuery = true)
-	List<AtendimentoRegistro> listarTodosRegistros();
-	
-	@Query(value = "SELECT * FROM atendimento_registro WHERE atendimento_registro_id = :id AND atendimento_registro_status >= 0", nativeQuery = true)
-	Optional<AtendimentoRegistro> buscarRegistroPorID();
-	
-=======
 
 	@Query(value = "SELECT * FROM atendimento_registro WHERE atendimento_registro_status >= 0", nativeQuery = true)
 	List<AtendimentoRegistro> listarTodosRegistros();
@@ -25,17 +16,9 @@ public interface AtendimentoRegistroRepository extends JpaRepository<Atendimento
 	@Query(value = "SELECT * FROM atendimento_registro WHERE atendimento_registro_id = :id AND atendimento_registro_status >= 0", nativeQuery = true)
 	Optional<AtendimentoRegistro> buscarRegistroPorID();
 
->>>>>>> temp
 	//@Modifying
 	//@Transactional
 	//@Query(value = "UPDATE atendimento_registro SET atendimento_registro_status = -1 WHERE atendimento_registro_id = :id", nativeQuery = true)
 	//void excluirRegistroPorID();
-<<<<<<< HEAD
-	
-	
 
 }
-=======
-
-}
->>>>>>> temp

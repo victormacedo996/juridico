@@ -3,49 +3,17 @@ package br.senac.juridico.model;
 import java.io.Serializable;
 import java.sql.Blob;
 
-<<<<<<< HEAD
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-=======
 import jakarta.persistence.*;
->>>>>>> temp
 
 @Entity
 @Table(name = "arquivo")
 public class Arquivo implements Serializable{
-<<<<<<< HEAD
-
-	/**
-	 * 
-	 */
-=======
->>>>>>> temp
 	private static final long serialVersionUID = 6022323775202017518L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "arquivo_id", nullable = false)
 	private Integer id;
-<<<<<<< HEAD
-	
-	@Column(name = "arquivo_nome", nullable = false)
-	private String nome;
-	
-	@Column(name = "arquivo_md5", nullable = false)
-	private String md5;
-	
-	@Column(name = "arquivo_blob", nullable = false)
-	private Blob blob;
-	
-	@Column(name = "arquivo_extensao", nullable = false)
-	private String extensao;
-	
-=======
 
 	@Column(name = "arquivo_nome", nullable = false)
 	private String nome;
@@ -59,7 +27,6 @@ public class Arquivo implements Serializable{
 	@Column(name = "arquivo_extensao", nullable = false)
 	private String extensao;
 
->>>>>>> temp
 	@Column(name = "arquivo_status", nullable = false)
 	private int status;
 
@@ -110,12 +77,5 @@ public class Arquivo implements Serializable{
 	public void setStatus(int status) {
 		this.status = status;
 	}
-<<<<<<< HEAD
-	
-	
-	
-}
-=======
 
 }
->>>>>>> temp
