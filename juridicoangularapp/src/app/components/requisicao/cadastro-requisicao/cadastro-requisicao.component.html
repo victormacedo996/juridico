@@ -10,32 +10,32 @@
             <div class="modal-body">
                 <div id="input1">
                     <label>Titulo</label>                    
-                    <input type="text" class="form-control" placeholder="Pessoa física ou Empresa" aria-describedby="basic-addon3">                        
+                    <input [(ngModel)]="titulo" type="text" class="form-control" placeholder="Pessoa física ou Empresa" aria-describedby="basic-addon3">                        
                 </div>
                 <div id="input2" class="inputs">
                     <label class="labels">Tipo da solicitação</label>                       
-                    <input type="text" class="form-control" placeholder="Pessoa física" aria-describedby="basic-addon3">                        
+                    <input [(ngModel)]="tipoSolicitacao" type="text" class="form-control" placeholder="Pessoa física" aria-describedby="basic-addon3">                        
                 </div>
                 <div id="input3" class="inputs">
                     <label class="labels">Requisito solicitação</label>
-                    <input type="text" class="form-control" placeholder="Unidade Central" aria-describedby="basic-addon3">
+                    <input [(ngModel)]="requisitoSolicitacao" type="text" class="form-control" placeholder="Unidade Central" aria-describedby="basic-addon3">
                         
                 </div>
                 <div id="input4" class="inputs">
                     <label class="labels">Requisito Template</label>
-                    <input type="text" class="form-control" placeholder="Área ou setor" aria-describedby="basic-addon3">                    
+                    <input [(ngModel)]="requisitoTemplate" type="text" class="form-control" placeholder="Área ou setor" aria-describedby="basic-addon3">                    
                 </div>
                 <div id="input7" class="inputs">
                     <label class="labels">Analise Encerramento</label>
-                    <input type="text" class="form-control" placeholder="Prioridade">
+                    <input [(ngModel)]="analiseEncerramento" type="text" class="form-control" placeholder="Prioridade">
                 </div>
                 <div id="input7" class="inputs">
                     <label class="labels">Prioridade do processo</label>
-                    <input type="text" class="form-control" placeholder="Prioridade">
+                    <input [(ngModel)]="prioridadeProcesso" type="text" class="form-control" placeholder="Prioridade">
                 </div>
                 <div id="input8" class="inputs">
                     <label class="labels">Observação</label>
-                        <textarea class="form-control" aria-label="With textarea" placeholder="Digite seu comentário aqui..."></textarea>
+                        <textarea [(ngModel)]="observacao" class="form-control" aria-label="With textarea" placeholder="Digite seu comentário aqui..."></textarea>
                 </div>
             </div>
             <div class="modal-footer">
