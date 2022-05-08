@@ -19,6 +19,7 @@ public class AtendimentoRegistroEnvolvido implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "atendimento_registro_envolvido_id", nullable = false)
 	private Integer id;
+<<<<<<< HEAD
 	
 	@Column(name = "atendimento_registro_envolvido_nome", nullable = false)
 	private String nome;
@@ -29,6 +30,18 @@ public class AtendimentoRegistroEnvolvido implements Serializable{
 	@Column(name = "atendimento_registro_envolvido_status")
 	private int status;
 	
+=======
+
+	@Column(name = "atendimento_registro_envolvido_nome", nullable = false)
+	private String nome;
+
+	@Column(name = "atendimento_registro_envolvido_email", nullable = false)
+	private String email;
+
+	@Column(name = "atendimento_registro_envolvido_status")
+	private int status;
+
+>>>>>>> temp
 	//@ManyToMany????????????
 	@OneToMany
 	@Column(name = "atendimento_registro_id")
@@ -73,9 +86,14 @@ public class AtendimentoRegistroEnvolvido implements Serializable{
 	public void setAtendimentoRegistro(AtendimentoRegistro atendimentoRegistro) {
 		this.atendimentoRegistro = atendimentoRegistro;
 	}
+<<<<<<< HEAD
 	
 	
 	
 	
 	
 }
+=======
+
+}
+>>>>>>> temp

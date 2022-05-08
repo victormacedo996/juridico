@@ -2,6 +2,7 @@ package br.senac.juridico.model;
 
 import java.io.Serializable;
 
+<<<<<<< HEAD
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,21 +10,28 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+=======
+import jakarta.persistence.*;
+>>>>>>> temp
 
 @Entity
 @Table(name = "atendimento_arquivo")
 public class AtendimentoArquivo implements Serializable{
+<<<<<<< HEAD
 
 	
 	/**
 	 * 
 	 */
+=======
+>>>>>>> temp
 	private static final long serialVersionUID = 8595969509756192489L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "atendimento_arquivo_id", nullable = false)
 	private Integer atendimento_arquivo;
+<<<<<<< HEAD
 	
 	@Column(name = "atendimento_arquivo_descricao", nullable = false)
 	private String arquivo_descricao;
@@ -85,3 +93,19 @@ public class AtendimentoArquivo implements Serializable{
 	
 	
 }
+=======
+
+	@Column(name = "atendimento_arquivo_descricao", nullable = false)
+	private String arquivo_descricao;
+
+	@Column(name = "atendimento_arquivo_status", nullable = false)
+	private int arquivo_status;
+
+	@ManyToOne
+	@JoinColumn(name = "atendimento_registro_id")
+	private AtendimentoRegistro atendimentoRegistro;
+
+	@Column(name = "arquivo_id", nullable = false)
+	private Integer arquivo_id;
+}
+>>>>>>> temp
