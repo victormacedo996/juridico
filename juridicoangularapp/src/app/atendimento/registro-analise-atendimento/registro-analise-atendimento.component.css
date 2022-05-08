@@ -1,0 +1,40 @@
+.container-fluid {
+    width: 100%;
+    max-width: 1200px;
+  
+    margin: 0 auto;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+  .register-button{
+    margin-left: 15px;
+  }
+
+  .atendimento-secao-registro{
+    margin-top: 40px;
+  }
+
+  .button-right{
+      float: right;
+  }
+
+  .button-left{
+      float: left;
+  }
+  .cancel{
+    margin-left: 15px;
+  }
