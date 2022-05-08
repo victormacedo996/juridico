@@ -12,6 +12,7 @@ import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empres
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
 import { RequisicaoComponent } from './components/requisicao/requisicao.component';
 import { CadastroRequisicaoComponent } from './components/requisicao/cadastro-requisicao/cadastro-requisicao.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CadastroRequisicaoComponent } from './components/requisicao/cadastro-re
     CadastroRequisicaoComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
