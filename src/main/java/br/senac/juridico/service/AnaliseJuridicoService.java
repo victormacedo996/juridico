@@ -6,19 +6,16 @@ import org.springframework.stereotype.Service;
 import br.senac.juridico.model.AnaliseJuridico;
 import br.senac.juridico.repository.AnaliseJuridicoRepository;
 
-
-
-
 @Service
 public class AnaliseJuridicoService {
-	private final AnaliseJuridicoRepository analiseJuridicoRepository;
+	private final AnaliseJuridicoRepository analiseJuridicoRepository; 
 	
 	@Autowired
 	public AnaliseJuridicoService(AnaliseJuridicoRepository analiseJuridicoRepository) {
 		this.analiseJuridicoRepository = analiseJuridicoRepository;
 	}
 	
-	public AnaliseJuridico adicionarAnaliseJuridico(AnaliseJuridico analiseJuridico) {
+	public AnaliseJuridico salvarAnalise(AnaliseJuridico analiseJuridico) {
 		return analiseJuridicoRepository.save(analiseJuridico);
 	}
 }

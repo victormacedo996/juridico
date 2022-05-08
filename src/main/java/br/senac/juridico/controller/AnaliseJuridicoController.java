@@ -14,7 +14,7 @@ import br.senac.juridico.service.AnaliseJuridicoService;
 @RestController
 @RequestMapping("api/analiseJuridico")
 public class AnaliseJuridicoController {
-	
+
 	private final AnaliseJuridicoService analiseJuridicoService;
 	
 	@Autowired
@@ -23,8 +23,10 @@ public class AnaliseJuridicoController {
 	}
 	
 	@PostMapping("/adicionar")
-	public ResponseEntity<AnaliseJuridico> adicionarAnaliseJuridico(@RequestBody AnaliseJuridico analise){
-		AnaliseJuridico analiseJuridico = analiseJuridicoService.adicionarAnaliseJuridico(analise);
-		return new ResponseEntity<>(analiseJuridico, HttpStatus.CREATED);
+	public ResponseEntity<AnaliseJuridico> adicionarAnalise(@RequestBody AnaliseJuridico analiseJuridico){
+		AnaliseJuridico analise = analiseJuridicoService.salvarAnalise(analiseJuridico);
+		return new ResponseEntity<>(analise, HttpStatus.CREATED);
 	}
+	
+	
 }
