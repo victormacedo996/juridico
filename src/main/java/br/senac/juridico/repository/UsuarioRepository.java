@@ -1,0 +1,33 @@
+package br.senac.juridico.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import br.senac.juridico.model.Usuario;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+    @Query(value = "SELECT * FROM Usuario WHERE usuario_status >= 0", nativeQuery = true)
+	List<Usuario> buscarUsuarioAtivos();
+
+    @Query(value = "SELECT * FROM Usuario WHERE usuario_id = :id AND usuario_status >= 0", nativeQuery = true)
+	Optional<Usuario> buscarUsuarioAtivosPorId(int id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Usuario SET usuario_status = -1 WHERE usuario_id = :id", nativeQuery = true)
+	void apagarUsuarioPorId(@Param("id") Integer id);
+    
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Usuario SET usuario_status = 0 WHERE usuario_id = :id", nativeQuery = true)
+	void desativarUsuarioPorId(@Param("id") Integer id);
+}

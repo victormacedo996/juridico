@@ -1,0 +1,41 @@
+package br.senac.juridico.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.senac.juridico.model.Usuario;
+import br.senac.juridico.exception.*;
+import br.senac.juridico.repository.UsuarioRepository;
+
+@Service
+public class UsuarioService {
+	private final UsuarioRepository UsuarioRepository;
+
+	@Autowired
+	public UsuarioService(UsuarioRepository UsuarioRepository) {
+		this.UsuarioRepository = UsuarioRepository;
+	}
+	
+	public Usuario adicionarUsuario(Usuario Usuario) {
+		return UsuarioRepository.save(Usuario);
+	}
+	
+	public Usuario atualizarUsuario(Usuario Usuario) {
+		return UsuarioRepository.save(Usuario);
+	}
+	
+	public void apagarUsuario(int id) {
+		UsuarioRepository.apagarUsuarioPorId(id);
+	}
+	
+	public Usuario buscarUsuariobyId(int id) {
+		return UsuarioRepository.buscarUsuarioAtivosPorId(id)
+			.orElseThrow(() -> new UsuarioNotFoundException ("Usuario id "+ id + "não foi encontrada!"));
+	}
+	
+	public List<Usuario> buscarUsuariosAtivos(){
+		return UsuarioRepository.buscarUsuarioAtivos();
+	}
+}

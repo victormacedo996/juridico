@@ -18,7 +18,15 @@ public class Usuario implements Serializable {
 	private String nomeCompleto;
 	@Column(name = "usuario_tipo", nullable = false)
 	private int tipo;
+	@Column(name = "usuario_status", nullable = false)
+	private int status;
 	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	public int getId() {
 		return id;
 	}
