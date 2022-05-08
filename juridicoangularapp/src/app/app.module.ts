@@ -10,6 +10,8 @@ import { ListarEmpresasComponent } from './components/Empresa/listar-empresas/li
 import { AdicionarEmpresaComponent } from './components/Empresa/adicionar-empresa/adicionar-empresa.component';
 import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empresa/atualizar-empresa.component';
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
+import { RequisicaoComponent } from './components/requisicao/requisicao.component';
+import { CadastroRequisicaoComponent } from './components/requisicao/cadastro-requisicao/cadastro-requisicao.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apag
     ListarEmpresasComponent,
     AdicionarEmpresaComponent,
     AtualizarEmpresaComponent,
-    ApagarEmpresaComponent
+    ApagarEmpresaComponent,
+    RequisicaoComponent,
+    CadastroRequisicaoComponent
   ],
   imports: [
     BrowserModule,
