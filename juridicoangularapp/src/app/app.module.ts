@@ -10,7 +10,7 @@ import { ListarEmpresasComponent } from './components/Empresa/listar-empresas/li
 import { AdicionarEmpresaComponent } from './components/Empresa/adicionar-empresa/adicionar-empresa.component';
 import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empresa/atualizar-empresa.component';
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
-import { ConsultarComponent } from './components/consultar/consultar.component';
+import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
 
 @NgModule({
   declarations: [
