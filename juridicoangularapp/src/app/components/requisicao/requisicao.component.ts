@@ -4,6 +4,7 @@
    A controller que receberá esses dados no back-end será a AnaliseJuridicoController.java
 */
 import { Component, OnInit } from '@angular/core';
+import { CarregarParametrosRequisicaoService } from 'src/app/services/requisicao/carregar-parametros-requisicao.service';
 
 @Component({
   selector: 'app-requisicao',
@@ -12,9 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequisicaoComponent implements OnInit {
   showModal = false;
-  constructor() { }
+  constructor(private carregarParametros:CarregarParametrosRequisicaoService) { }
 
   ngOnInit(): void {
+    this.teste();
+  }
+
+  teste(){
+    this.carregarParametros.carregarParametrosRequisicao().subscribe(response => {
+      debugger;
+      console.log(response);
+    },error=> {
+
+    })
   }
 
   exibirModal(){
