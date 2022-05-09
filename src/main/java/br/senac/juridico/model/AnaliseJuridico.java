@@ -37,6 +37,9 @@ public class AnaliseJuridico implements Serializable {
 	
 	@Column(name = "solicitacao_analise_status", nullable = false)
 	private int Status;
+
+	@Column(name = "solicitacao_prioridade_id", nullable = false)
+	private int Prioridade;
 	
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
@@ -82,5 +85,22 @@ public class AnaliseJuridico implements Serializable {
 	public void setStatus(int status) {
 		Status = status;
 	}
-	
+	public int getPrioridade() {
+		return Prioridade;
+	}
+	public void setPrioridade(int prioridade) {
+		Prioridade = prioridade;
+	}
+	public Usuario getUsuario() {
+		return Usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.Usuario = usuario;
+	}
+	public TipoSolicitacao getTipoSolicitacao() {
+		return TipoSolicitacao;
+	}
+	public void setTipoSolicitacao(TipoSolicitacao tipoSolicitacao) {
+		this.TipoSolicitacao = tipoSolicitacao;
+	}
 }
