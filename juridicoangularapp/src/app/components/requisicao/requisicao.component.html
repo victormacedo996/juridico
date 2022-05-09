@@ -84,7 +84,7 @@
                 <tr>
                     <th scope="col">Solicitante</th>
                     <th scope="col">Responsável designado</th>
-                    <th scope="col">Última mificação</th>
+                    <th scope="col">Última modificação</th>
                     <th scope="col">Prazo</th>
                     <th scope="col">Responsável</th>
                     <th scope="col">Prazo</th>
@@ -143,8 +143,8 @@
     </div>
 
     <!--Componente que exibe modal de cadastro-->
-    <app-cadastro-requisicao 
-        (onCloseModal)="fecharModal($event)" 
+    <app-cadastro-requisicao
+        (onCloseModal)="fecharModal($event)"
         *ngIf="this.showModal"
     ></app-cadastro-requisicao>
     <!--Componente que exibe modal de cadastro fim-->
