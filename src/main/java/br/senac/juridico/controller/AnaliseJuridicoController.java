@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.senac.juridico.model.AnaliseJuridico;
 import br.senac.juridico.model.Empresa;
-import br.senac.juridico.model.modelToView.ParametrosRequisicao;
 import br.senac.juridico.service.AnaliseJuridicoService;
 
 @RestController
@@ -32,12 +31,5 @@ public class AnaliseJuridicoController {
 		AnaliseJuridico analise = analiseJuridicoService.salvarAnalise(analiseJuridico);
 		return new ResponseEntity<>(analise, HttpStatus.CREATED);
 	}
-	
-	@GetMapping("/obterParametros")
-	public ResponseEntity<ParametrosRequisicao> obterParametros(){
-		ParametrosRequisicao parametros = analiseJuridicoService.buscarParametros();
-		return new ResponseEntity<>(parametros, HttpStatus.OK);
-	}
-	
 	
 }

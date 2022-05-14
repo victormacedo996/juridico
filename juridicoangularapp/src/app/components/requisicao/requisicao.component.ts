@@ -5,6 +5,8 @@
 */
 import { Component, OnInit } from '@angular/core';
 import { CarregarParametrosRequisicaoService } from 'src/app/services/requisicao/carregar-parametros-requisicao.service';
+import { RequisitoTemplateService } from 'src/app/services/requisicao/requisito-template.service';
+import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicitacao.service';
 
 @Component({
   selector: 'app-requisicao',
@@ -13,14 +15,18 @@ import { CarregarParametrosRequisicaoService } from 'src/app/services/requisicao
 })
 export class RequisicaoComponent implements OnInit {
   showModal = false;
-  constructor(private carregarParametros:CarregarParametrosRequisicaoService) { }
+  constructor(
+    private tipoSolicitacao:TipoSolicitacaoService,
+    private requisitoTemplate:RequisitoTemplateService
+    ) { }
 
   ngOnInit(): void {
     this.teste();
   }
 
   teste(){
-    this.carregarParametros.carregarParametrosRequisicao().subscribe(response => {
+    this.tipoSolicitacao.buscarTipoSolicitacao().subscribe(response => {
+      debugger;
       console.log(response);
     },error=> {
 

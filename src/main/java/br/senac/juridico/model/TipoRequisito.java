@@ -31,6 +31,10 @@ public class TipoRequisito implements Serializable {
 	@JoinColumn(name = "solicitacao_tipo_id")
 	private TipoSolicitacao tipoSolicitacao;
 	
+	@ManyToOne
+	@JoinColumn(name = "solicitacao_tipo_requisito_id")
+	private RequisitoTemplate requisitoTemplate;
+	
 	public int getId() {
 		return Id;
 	}
