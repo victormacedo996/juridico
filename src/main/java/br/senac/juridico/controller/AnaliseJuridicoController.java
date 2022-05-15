@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.senac.juridico.model.AnaliseJuridico;
-import br.senac.juridico.model.Empresa;
 import br.senac.juridico.service.AnaliseJuridicoService;
 
 @RestController
@@ -30,6 +29,11 @@ public class AnaliseJuridicoController {
 	public ResponseEntity<AnaliseJuridico> adicionarAnalise(@RequestBody AnaliseJuridico analiseJuridico){
 		AnaliseJuridico analise = analiseJuridicoService.salvarAnalise(analiseJuridico);
 		return new ResponseEntity<>(analise, HttpStatus.CREATED);
-	}	
+	}
 	
+	@GetMapping("/listarAnalises")
+	public ResponseEntity<List<AnaliseJuridico>> listarAnalises(){
+		List<AnaliseJuridico> analises = analiseJuridicoService.listarAnalises();
+		return new ResponseEntity<>(analises, HttpStatus.OK);
+	}	
 }

@@ -32,4 +32,8 @@ public class AnaliseJuridicoService {
 	public AnaliseJuridico salvarAnalise(AnaliseJuridico analiseJuridico) {
 		return analiseJuridicoRepository.save(analiseJuridico);
 	}
+
+	public List<AnaliseJuridico> listarAnalises() {
+		return analiseJuridicoRepository.listarTodosRegistros();
+	}
 }
