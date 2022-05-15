@@ -144,6 +144,7 @@
 
     <!--Componente que exibe modal de cadastro-->
     <app-cadastro-requisicao
+        (onSave)="salvarRequisicao($event)"
         (onCloseModal)="fecharModal($event)"
         [params]="this.params"
         *ngIf="this.showModal"

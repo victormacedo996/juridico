@@ -8,6 +8,8 @@ import { CarregarParametrosRequisicaoService } from 'src/app/services/requisicao
 import { RequisitoTemplateService } from 'src/app/services/requisicao/requisito-template.service';
 import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicitacao.service';
 import { forkJoin, map } from 'rxjs';
+import { analiseJuridico } from 'src/app/models/analiseJuridico';
+import { RequisicaoService } from 'src/app/services/requisicao/requisicao.service';
 
 @Component({
   selector: 'app-requisicao',
@@ -17,9 +19,11 @@ import { forkJoin, map } from 'rxjs';
 export class RequisicaoComponent implements OnInit {
   showModal = false;
   params:any;
+  analiseJuridicoDaModal:analiseJuridico = new analiseJuridico();
   constructor(
     private tipoSolicitacao:TipoSolicitacaoService,
-    private requisitoTemplate:RequisitoTemplateService
+    private requisitoTemplate:RequisitoTemplateService,
+    private requisicaoService:RequisicaoService
     ) { }
 
   ngOnInit(): void {
@@ -54,5 +58,12 @@ export class RequisicaoComponent implements OnInit {
   fecharModal(event:boolean){
     this.showModal = event;
   }
+  //passa os dados para o serviço realizar o post
+  salvarRequisicao(event:analiseJuridico){
+    this.requisicaoService.criarRequisicao(event).subscribe(response => {
+      debugger;
+    },error => {
 
+    }, ()=>{})
+  }
 }

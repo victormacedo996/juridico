@@ -26,10 +26,9 @@ public class AnaliseJuridicoController {
 		this.analiseJuridicoService = analiseJuridicoService;
 	}
 	
-	@PostMapping("/adicionar")
+	@PostMapping()
 	public ResponseEntity<AnaliseJuridico> adicionarAnalise(@RequestBody AnaliseJuridico analiseJuridico){
 		AnaliseJuridico analise = analiseJuridicoService.salvarAnalise(analiseJuridico);
 		return new ResponseEntity<>(analise, HttpStatus.CREATED);
 	}	
-	
 }
