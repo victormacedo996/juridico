@@ -30,6 +30,6 @@ public class AnaliseJuridicoController {
 	public ResponseEntity<AnaliseJuridico> adicionarAnalise(@RequestBody AnaliseJuridico analiseJuridico){
 		AnaliseJuridico analise = analiseJuridicoService.salvarAnalise(analiseJuridico);
 		return new ResponseEntity<>(analise, HttpStatus.CREATED);
-	}
+	}	
 	
 }

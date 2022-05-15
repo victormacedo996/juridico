@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <div id="input1">
                     <label>Titulo</label>                    
-                    <input [(ngModel)]="titulo" type="text" class="form-control" placeholder="Pessoa física ou Empresa" aria-describedby="basic-addon3">                        
+                    <input [(ngModel)]="this.analiseJuridico.titulo" type="text" class="form-control" placeholder="Pessoa física ou Empresa" aria-describedby="basic-addon3">                        
                 </div>
                 <div id="input2" class="inputs">
                     <label class="labels">Tipo da solicitação</label>                       
@@ -20,40 +20,27 @@
                         bindValue="id" 
                         dropdownPosition="bottom"
                         [multiple]="false"
-                        [(ngModel)]="tipoSolicitacaoSelecionado"
+                        [(ngModel)]="this.analiseJuridico.tipoSolicitacao"
                     ></ng-select>
-                </div>
-                <div id="input3" class="inputs">
-                    <label class="labels">Requisito solicitação</label>
-                    <ng-select
-                        [items]="this.requisicaoTemplate" 
-                        bindLabel="descricao" 
-                        bindValue="id" 
-                        dropdownPosition="bottom"
-                        [multiple]="false"
-                        [(ngModel)]="requisitoSolicitacaoSelecionado"
-                    ></ng-select>
-                        
-                </div>
-                <div id="input4" class="inputs">
-                    <label class="labels">Requisito Template</label>
-                    <input [(ngModel)]="requisitoTemplate" type="text" class="form-control" placeholder="Área ou setor" aria-describedby="basic-addon3">                    
-                </div>
-                <div id="input7" class="inputs">
-                    <label class="labels">Analise Encerramento</label>
-                    <input [(ngModel)]="analiseEncerramento" type="text" class="form-control" placeholder="Prioridade">
                 </div>
                 <div id="input7" class="inputs">
                     <label class="labels">Prioridade do processo</label>
-                    <input [(ngModel)]="prioridadeProcesso" type="text" class="form-control" placeholder="Prioridade">
+                    <ng-select
+                        [items]="this.prioridade" 
+                        bindLabel="name" 
+                        bindValue="id" 
+                        dropdownPosition="bottom"
+                        [multiple]="false"
+                        [(ngModel)]="this.analiseJuridico.prioridade"
+                    ></ng-select>
                 </div>
                 <div id="input8" class="inputs">
                     <label class="labels">Observação</label>
-                        <textarea [(ngModel)]="observacao" class="form-control" aria-label="With textarea" placeholder="Digite seu comentário aqui..."></textarea>
+                        <textarea [(ngModel)]="this.analiseJuridico.observacao" class="form-control" aria-label="With textarea" placeholder="Digite seu comentário aqui..."></textarea>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn" id="confirmar" (click)="salvar()">Confirmar</button>
+                <button type="button" class="btn" id="confirmar" (click)="validarCondicoes()">Confirmar</button>
                 <a href="#" id="cancelar" (click)="closeModal()">Cancelar</a>
             </div>
         </div>

@@ -8,8 +8,8 @@ export class analiseJuridico{
     analiseDataRegistro:Date = new Date();
     titulo:string = '';
     observacao:string='';
-    status:number = 0;
+    status?:number;
+    prioridade?:number;
     usuario:usuario = new usuario();
     tipoSolicitacao:tipoSolicitacao = new tipoSolicitacao();
-    arquivo:Array<arquivo> = new Array<arquivo>();
 }

@@ -27,6 +27,7 @@ export class RequisicaoComponent implements OnInit {
   }
 
   carregarParametros(){
+    //Faz requisição para todas as apis responsáveis pela exibição inicial da tela de uma só vez
     let response = forkJoin([
       this.tipoSolicitacao.buscarTipoSolicitacao(),
       this.requisitoTemplate.buscarRequisitoTemplate(),
@@ -38,20 +39,18 @@ export class RequisicaoComponent implements OnInit {
 
     response.subscribe(
       (response) => {
+        //vários objetos são salvos nessa variável
+        //variável que é passada para a modal para carregar alguns dados
         this.params = response;
       },
       (error) => {
-        
+        alert('não foi possível carregar os dados, recarregue a página')
       }
     );
   }
-
-
-
   exibirModal(){
     this.showModal = !this.showModal
   }
-
   fecharModal(event:boolean){
     this.showModal = event;
   }
