@@ -61,7 +61,6 @@ export class RequisicaoComponent implements OnInit {
   //passa os dados para o serviço realizar o post
   salvarRequisicao(event:analiseJuridico){
     this.requisicaoService.criarRequisicao(event).subscribe(response => {
-      debugger;
     },error => {
 
     }, ()=>{})

@@ -141,8 +141,13 @@
             </div>
         </div>
     </div>
-
     <!--Componente que exibe modal de cadastro-->
+    <!-- 
+    () = output = passa dado do componente filho para o componente pai
+    [] = input = passa dado do componente pai para o componente filho 
+    Em ambos os casos a declaração é feita no ts do componente filho
+    No html é feito conforme abaixo
+    -->
     <app-cadastro-requisicao
         (onSave)="salvarRequisicao($event)"
         (onCloseModal)="fecharModal($event)"

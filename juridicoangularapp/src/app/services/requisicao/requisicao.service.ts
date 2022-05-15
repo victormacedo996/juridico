@@ -12,6 +12,7 @@ export class RequisicaoService {
 
   constructor(private http: HttpClient) { }
   criarRequisicao(requisicao:analiseJuridico){
+    debugger;
     return this.http.post(this.url,requisicao);
   }
   atualizarRequisicao(){

@@ -11,6 +11,8 @@ import { tipoSolicitacao } from 'src/app/models/tipoSolicitacao';
 })
 export class CadastroRequisicaoComponent implements OnInit {
   @Input() params: any;
+  @Output() onCloseModal: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() onSave: EventEmitter<analiseJuridico> = new EventEmitter<analiseJuridico>();
   tipoSolicitacao: Array<tipoSolicitacao> = new Array<tipoSolicitacao>();
   requisicaoTemplate: Array<requisicaoTemplate> = new Array<requisicaoTemplate>();
   analiseJuridico: analiseJuridico = new analiseJuridico();
@@ -20,8 +22,6 @@ export class CadastroRequisicaoComponent implements OnInit {
     this.config.notFoundText = 'Custom not found';
     this.config.bindValue = 'value';
   }
-  @Output() onCloseModal: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() onSave: EventEmitter<analiseJuridico> = new EventEmitter<analiseJuridico>();
 
   ngOnInit(): void {
     this.bindValues()

@@ -31,4 +31,5 @@ public class AnaliseJuridicoController {
 		AnaliseJuridico analise = analiseJuridicoService.salvarAnalise(analiseJuridico);
 		return new ResponseEntity<>(analise, HttpStatus.CREATED);
 	}	
+	
 }
