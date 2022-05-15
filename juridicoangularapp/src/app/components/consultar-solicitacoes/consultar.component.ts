@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FiltrarService } from 'src/app/services/filtrar.service';
 
 @Component({
   selector: 'app-consultar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultarComponent implements OnInit {
 
-  constructor() { }
+  numeroSolicitacao:String= ""
+  constructor(private filtrarService:FiltrarService) { }
 
   ngOnInit(): void {
   }
+filtrar(){
+  this.filtrarService.filtrar(this.numeroSolicitacao).subscribe()
 
+}
 }
