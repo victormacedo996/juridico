@@ -207,4 +207,9 @@ table th{
     display: flex;
     justify-content: space-between;
 }
+.ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+}
 /*FIM FOOTER*/

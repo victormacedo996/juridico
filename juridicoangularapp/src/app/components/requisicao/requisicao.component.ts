@@ -3,10 +3,11 @@
    Essas modais irão chamar um serviço que enviará os dados para o back-end
    A controller que receberá esses dados no back-end será a AnaliseJuridicoController.java
 */
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CarregarParametrosRequisicaoService } from 'src/app/services/requisicao/carregar-parametros-requisicao.service';
 import { RequisitoTemplateService } from 'src/app/services/requisicao/requisito-template.service';
 import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicitacao.service';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
   selector: 'app-requisicao',
@@ -15,23 +16,37 @@ import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicit
 })
 export class RequisicaoComponent implements OnInit {
   showModal = false;
+  params:any;
   constructor(
     private tipoSolicitacao:TipoSolicitacaoService,
     private requisitoTemplate:RequisitoTemplateService
     ) { }
 
   ngOnInit(): void {
-    this.teste();
+    this.carregarParametros();
   }
 
-  teste(){
-    this.tipoSolicitacao.buscarTipoSolicitacao().subscribe(response => {
-      debugger;
-      console.log(response);
-    },error=> {
+  carregarParametros(){
+    let response = forkJoin([
+      this.tipoSolicitacao.buscarTipoSolicitacao(),
+      this.requisitoTemplate.buscarRequisitoTemplate(),
+    ]).pipe(
+      map(([tipoSolicitacao, requisicaoTemplate]) => {
+        return { tipoSolicitacao, requisicaoTemplate };
+      })
+    );
 
-    })
+    response.subscribe(
+      (response) => {
+        this.params = response;
+      },
+      (error) => {
+        
+      }
+    );
   }
+
+
 
   exibirModal(){
     this.showModal = !this.showModal

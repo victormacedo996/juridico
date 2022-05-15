@@ -14,11 +14,25 @@
                 </div>
                 <div id="input2" class="inputs">
                     <label class="labels">Tipo da solicitação</label>                       
-                    <input [(ngModel)]="tipoSolicitacao" type="text" class="form-control" placeholder="Pessoa física" aria-describedby="basic-addon3">                        
+                    <ng-select
+                        [items]="this.tipoSolicitacao" 
+                        bindLabel="descricao" 
+                        bindValue="id" 
+                        dropdownPosition="bottom"
+                        [multiple]="false"
+                        [(ngModel)]="tipoSolicitacaoSelecionado"
+                    ></ng-select>
                 </div>
                 <div id="input3" class="inputs">
                     <label class="labels">Requisito solicitação</label>
-                    <input [(ngModel)]="requisitoSolicitacao" type="text" class="form-control" placeholder="Unidade Central" aria-describedby="basic-addon3">
+                    <ng-select
+                        [items]="this.requisicaoTemplate" 
+                        bindLabel="descricao" 
+                        bindValue="id" 
+                        dropdownPosition="bottom"
+                        [multiple]="false"
+                        [(ngModel)]="requisitoSolicitacaoSelecionado"
+                    ></ng-select>
                         
                 </div>
                 <div id="input4" class="inputs">
