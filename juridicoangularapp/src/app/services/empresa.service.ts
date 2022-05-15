@@ -21,7 +21,6 @@ export class EmpresaService {
 
   public listarEmpresas(): Observable<Empresa[]>{
     const apiUrl = `${this.url}/`;
-    console.log(apiUrl);
     return this.http.get<Empresa[]>(apiUrl);
   }
 

@@ -23,11 +23,10 @@ export class CadastroRequisicaoComponent implements OnInit {
   @Output() onCloseModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   ngOnInit(): void {
-    console.log(this.params)
     this.bindValues()
     this.criarEnumPrioridade()
   }
-  //Faz o bind dos valores recebidos do componente requisicao.component com variáveis locais
+  //Faz o bind dos valores recebidos do componente requisicao.component com variáveis do componente
   bindValues(){
     this.tipoSolicitacao = this.params.tipoSolicitacao;
     this.requisicaoTemplate = this.params.requisicaoTemplate;
