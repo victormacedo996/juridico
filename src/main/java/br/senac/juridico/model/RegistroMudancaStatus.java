@@ -51,4 +51,62 @@ public class RegistroMudancaStatus implements Serializable{
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario_id;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getData_mudanca() {
+		return data_mudanca;
+	}
+
+	public void setData_mudanca(LocalDateTime data_mudanca) {
+		this.data_mudanca = data_mudanca;
+	}
+
+	public AtendimentoAnaliseJuridico getAtendimento_analise_juridico_id() {
+		return atendimento_analise_juridico_id;
+	}
+
+	public void setAtendimento_analise_juridico_id(AtendimentoAnaliseJuridico atendimento_analise_juridico_id) {
+		this.atendimento_analise_juridico_id = atendimento_analise_juridico_id;
+	}
+
+	public StatusSolicitacaoAnalise getStatus_solicitacao_analise_id_origem() {
+		return status_solicitacao_analise_id_origem;
+	}
+
+	public void setStatus_solicitacao_analise_id_origem(StatusSolicitacaoAnalise status_solicitacao_analise_id_origem) {
+		this.status_solicitacao_analise_id_origem = status_solicitacao_analise_id_origem;
+	}
+
+	public StatusSolicitacaoAnalise getStatus_solicitacao_analise_id_destino() {
+		return status_solicitacao_analise_id_destino;
+	}
+
+	public void setStatus_solicitacao_analise_id_destino(StatusSolicitacaoAnalise status_solicitacao_analise_id_destino) {
+		this.status_solicitacao_analise_id_destino = status_solicitacao_analise_id_destino;
+	}
+
+	public SolicitacaoAnaliseJuridico getSolicitacao_analise_id() {
+		return solicitacao_analise_id;
+	}
+
+	public void setSolicitacao_analise_id(SolicitacaoAnaliseJuridico solicitacao_analise_id) {
+		this.solicitacao_analise_id = solicitacao_analise_id;
+	}
+
+	public Usuario getUsuario_id() {
+		return usuario_id;
+	}
+
+	public void setUsuario_id(Usuario usuario_id) {
+		this.usuario_id = usuario_id;
+	}
+	
+	
+
 }
