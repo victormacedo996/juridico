@@ -24,7 +24,7 @@ public class AtendimentoRegistroEnvolvidoService {
 	}
 	
 	public AtendimentoRegistroEnvolvido buscarRegistroEnvolvidoPorId(int id) {
-		return atendimentoRegistroEnvolvidoRepository.buscarAtendimentoRegistroEnvolvidoPorID().orElseThrow(() -> new AtendimentoRegistroEnvolvidoNotFoundException ("Atendimento Registro Envolvido id" + id +" nã foi encontrado!o"));
+		return atendimentoRegistroEnvolvidoRepository.buscarAtendimentoRegistroEnvolvidoPorID(id).orElseThrow(() -> new AtendimentoRegistroEnvolvidoNotFoundException ("Atendimento Registro Envolvido id" + id +" nã foi encontrado!o"));
 	}
 	
 	public AtendimentoRegistroEnvolvido adicionarRegistroEnvolvido(AtendimentoRegistroEnvolvido atendimentoRegistroEnvolvido) {
@@ -36,6 +36,7 @@ public class AtendimentoRegistroEnvolvidoService {
 		envolvido.setNome(registroEnvolvido.getNome());
 		envolvido.setEmail(registroEnvolvido.getEmail());
 		envolvido.setStatus(registroEnvolvido.getStatus());
+		envolvido.setAtendimentoRegistro(registroEnvolvido.getAtendimentoRegistro());
 		return adicionarRegistroEnvolvido(envolvido);	
 	}
 	

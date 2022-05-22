@@ -49,10 +49,9 @@ public class AtendimentoRegistroController {
 	
 	
 	@PutMapping("/atualizar")
-	public ResponseEntity<AtendimentoRegistro> alterarRegistro(@RequestBody AtendimentoRegistro atualizarRegistro, @PathVariable Integer id){
-		atualizarRegistro.setId(id);
-		registroService.alterar(atualizarRegistro);
-		return ResponseEntity.noContent().build();
+	public ResponseEntity<AtendimentoRegistro> atualizarRegistro(@RequestBody AtendimentoRegistro registro){
+		AtendimentoRegistro atualizarRegistro = registroService.alterar(registro);
+		return new ResponseEntity<>(atualizarRegistro, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/excluir/{id}")

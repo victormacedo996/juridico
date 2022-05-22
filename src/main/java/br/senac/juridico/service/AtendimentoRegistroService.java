@@ -25,7 +25,8 @@ public class AtendimentoRegistroService {
 	}
 	
 	public AtendimentoRegistro buscarAtendimentoRegistroPorID(int id) {
-		return registroRepository.buscarRegistroPorID().orElseThrow(() -> new ObjectNotFoundException(id, "Registro não encontrado"));
+		return registroRepository.buscarRegistroPorID(id)
+				.orElseThrow(() -> new ObjectNotFoundException(id, "Registro não encontrado"));
 		
 	}
 	
@@ -39,6 +40,8 @@ public class AtendimentoRegistroService {
 		registro.setObservacao(registroAtend.getObservacao());
 		registro.setDataRegistro(registroAtend.getDataRegistro());
 		registro.setStatus(1);
+		registro.setAtendimentoAnaliseJuridico(registroAtend.getAtendimentoAnaliseJuridico());
+		registro.setUsuario(registroAtend.getUsuario());
 		return adicionarRegistro(registro);
 	}
 

@@ -46,10 +46,9 @@ public class AtendimentoRegistroEnvolvidoController {
 	}
 	
 	@RequestMapping(value="/atualizar/{id}", method=RequestMethod.PUT)
-	public ResponseEntity<AtendimentoRegistroEnvolvido> alterarRegistroEnvolvido(@RequestBody AtendimentoRegistroEnvolvido atualizarRegistroEnvolvido, @PathVariable Integer id){
-		atualizarRegistroEnvolvido.setId(id);
-		atendimentoRegistroEnvolvidoService.alterarRegistroEnvolvido(atualizarRegistroEnvolvido);
-		return ResponseEntity.noContent().build();
+	public ResponseEntity<AtendimentoRegistroEnvolvido> alterarRegistroEnvolvido(@RequestBody AtendimentoRegistroEnvolvido registroEnvolvido){
+		AtendimentoRegistroEnvolvido atualizarRegistroEnvolvido = atendimentoRegistroEnvolvidoService.alterarRegistroEnvolvido(registroEnvolvido);
+		return new ResponseEntity<>(atualizarRegistroEnvolvido, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)

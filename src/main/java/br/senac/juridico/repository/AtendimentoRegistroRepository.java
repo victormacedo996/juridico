@@ -19,7 +19,7 @@ public interface AtendimentoRegistroRepository extends JpaRepository<Atendimento
 	List<AtendimentoRegistro> listarTodosRegistrosAtivos();
 
 	@Query(value = "SELECT * FROM atendimento_registro WHERE atendimento_registro_id = :id AND atendimento_registro_status >= 0", nativeQuery = true)
-	Optional<AtendimentoRegistro> buscarRegistroPorID();
+	Optional<AtendimentoRegistro> buscarRegistroPorID(int id);
 
 	@Modifying
 	@Transactional
