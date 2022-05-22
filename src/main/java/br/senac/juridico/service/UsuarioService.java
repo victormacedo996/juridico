@@ -18,15 +18,15 @@ public class UsuarioService {
 		this.usuarioRepository = usuarioRepository;
 	}
 	
-	public Usuario adicionarUsuario(Usuario empresa) {
-		return usuarioRepository.save(empresa);
+	public Usuario adicionarUsuario(Usuario usuario) {
+		return usuarioRepository.save(usuario);
 	}
 	
-	public Usuario atualizarUsuario(Usuario empresa) {
-		return usuarioRepository.save(empresa);
+	public Usuario atualizarUsuario(Usuario usuario) {
+		return usuarioRepository.save(usuario);
 	}
 	
-	public void apagarUsuario(int id) {
+	public void excluirUsuario(int id) {
 		usuarioRepository.apagarUsuarioPorId(id);
 	}
 	

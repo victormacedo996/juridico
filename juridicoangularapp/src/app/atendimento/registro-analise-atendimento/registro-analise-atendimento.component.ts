@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistroAnaliseAtendimento } from 'src/app/models/RegistroAnaliseAtendimento';
+import { AtendimentoRegistroService } from 'src/app/services/atendimento-registro.service';
 
 
 export interface PeriodicElement {
@@ -27,9 +29,15 @@ export class RegistroAnaliseAtendimentoComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
 
-  constructor() { }
+  constructor(private atendimentoService:AtendimentoRegistroService) { }
 
   ngOnInit(): void {
+  }
+
+  atendimento:RegistroAnaliseAtendimento = new RegistroAnaliseAtendimento()
+
+  cadastrar(){
+    this.atendimentoService.cadastrarRegistro(this.atendimento)
   }
 
 }
