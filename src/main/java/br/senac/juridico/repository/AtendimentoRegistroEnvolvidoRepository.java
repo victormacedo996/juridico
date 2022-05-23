@@ -18,7 +18,7 @@ public interface AtendimentoRegistroEnvolvidoRepository extends JpaRepository<At
 	@Query(value = "SELECT * FROM atendimento_registro_envolvido WHERE atendimento_registro_envolvido_status >= 0", nativeQuery = true)
 	List<AtendimentoRegistroEnvolvido> listarTodosRegistrosEnvolvidoAtivos();
 
-	@Query(value = "SELECT * FROM FROM atendimento_registro_envolvido WHERE atendimento_registro_envolvido_id = :id AND atendimento_registro_envolvido_status >= 0", nativeQuery = true)
+	@Query(value = "SELECT * FROM atendimento_registro_envolvido WHERE atendimento_registro_envolvido_id = :id AND atendimento_registro_envolvido_status >= 0", nativeQuery = true)
 	Optional<AtendimentoRegistroEnvolvido> buscarAtendimentoRegistroEnvolvidoPorID(int id);
 
 	@Modifying

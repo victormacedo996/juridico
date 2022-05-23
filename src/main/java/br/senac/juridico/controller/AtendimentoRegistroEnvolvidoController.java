@@ -45,7 +45,7 @@ public class AtendimentoRegistroEnvolvidoController {
 		return new ResponseEntity<> (novoRegistroEnvolvido, HttpStatus.CREATED);
 	}
 	
-	@RequestMapping(value="/atualizar/{id}", method=RequestMethod.PUT)
+	@RequestMapping(value="/atualizar", method=RequestMethod.PUT)
 	public ResponseEntity<AtendimentoRegistroEnvolvido> alterarRegistroEnvolvido(@RequestBody AtendimentoRegistroEnvolvido registroEnvolvido){
 		AtendimentoRegistroEnvolvido atualizarRegistroEnvolvido = atendimentoRegistroEnvolvidoService.alterarRegistroEnvolvido(registroEnvolvido);
 		return new ResponseEntity<>(atualizarRegistroEnvolvido, HttpStatus.OK);
