@@ -26,7 +26,7 @@ public class UsuarioService {
 		return usuarioRepository.save(empresa);
 	}
 	
-	public void apagarUsuario(int id) {
+	public void excluirUsuario(int id) {
 		usuarioRepository.apagarUsuarioPorId(id);
 	}
 	
