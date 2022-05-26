@@ -5,12 +5,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import br.senac.juridico.model.SolicitacaoAnaliseJuridico;
 import br.senac.juridico.exception.*;
+=======
+import br.senac.juridico.exception.SolicitacaoAnaliseJuridicoNotFoundException;
+import br.senac.juridico.model.SolicitacaoAnaliseJuridico;
+>>>>>>> master
 import br.senac.juridico.repository.SolicitacaoAnaliseJuridicoRepository;
 
 @Service
 public class SolicitacaoAnaliseJuridicoService {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 	private final SolicitacaoAnaliseJuridicoRepository solicitacaoAnaliseJuridicoRepository;
 
 	@Autowired
@@ -26,6 +35,7 @@ public class SolicitacaoAnaliseJuridicoService {
 		return solicitacaoAnaliseJuridicoRepository.save(solicitacaoAnaliseJuridico);
 	}
 	
+<<<<<<< HEAD
 	public void apagarSolicitacaoAnaliseJuridico(int id) {
 		solicitacaoAnaliseJuridicoRepository.apagarSolicitacaoAnaliseJuridicoPorId(id);
 	}
@@ -39,3 +49,18 @@ public class SolicitacaoAnaliseJuridicoService {
 		return solicitacaoAnaliseJuridicoRepository.buscarSolicitacaoAnaliseJuridicoAtivas();
 	}
 }
+=======
+	public void excluirSolicitacaoAnaliseJuridico(int id) {
+		solicitacaoAnaliseJuridicoRepository.apagarSolicitacaoAnaliseJuridicoPorId(id);
+	}
+	
+	public SolicitacaoAnaliseJuridico buscaSolicitacaoAnaliseJuridicobyId(int id) {
+		return solicitacaoAnaliseJuridicoRepository.buscarSolicitacaoAnaliseJuridicoAtivosPorId(id)
+			.orElseThrow(() -> new SolicitacaoAnaliseJuridicoNotFoundException ("SolicitacaoAnaliseJuridico id "+ id + "não foi encontrado!"));
+	}
+
+	public List<SolicitacaoAnaliseJuridico> buscarSolicitacaoAnaliseJuridicoAtivos(){
+		return solicitacaoAnaliseJuridicoRepository.buscarSolicitacaoAnaliseJuridicoAtivos();
+	}
+}
+>>>>>>> master

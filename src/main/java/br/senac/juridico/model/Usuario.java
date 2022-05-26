@@ -19,6 +19,7 @@ public class Usuario implements Serializable {
 	@Column(name = "usuario_tipo", nullable = false)
 	private int tipo;
 	@Column(name = "usuario_status", nullable = false)
+<<<<<<< HEAD
 	private int status;
 	
 	public int getStatus() {
@@ -27,6 +28,14 @@ public class Usuario implements Serializable {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+=======
+	private int status;	
+	
+	@ManyToOne
+	@JoinColumn(name = "empresa_id")
+	private Empresa empresa;
+
+>>>>>>> master
 	public int getId() {
 		return id;
 	}
@@ -51,8 +60,17 @@ public class Usuario implements Serializable {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-	
-	
-	
-	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}	
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
 }
