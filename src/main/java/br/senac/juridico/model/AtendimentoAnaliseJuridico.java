@@ -32,13 +32,11 @@ public class AtendimentoAnaliseJuridico implements Serializable{
 
 	@Column(name = "atendimento_analise_juridico_status", nullable = false)
 	private int status;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "solicitacao_analise_id")
 	private SolicitacaoAnaliseJuridico solicitacaoId;
-
-	//nome do atributo de join está respondavel_usuario_id
-	//no diagrama de relacionamento está OneToOne???
+	
 	@OneToOne
 	@JoinColumn(name = "responsavel_usuario_id")
 	private Usuario usuario;
