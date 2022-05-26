@@ -12,26 +12,28 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "solicitacao_tipo")
-public class TipoSolicitacao implements Serializable {
-	
+@Table(name="solicitacao_tipo_requisito")
+public class SolicitacaoTipoRequisito implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "solicitacao_tipo_id", nullable = false)
+	@Column(name = "solicitacao_tipo_requisito_id", nullable = false)
 	private int Id;
 	
-	@Column(name = "solicitacao_tipo_descricao", nullable = false)
+	@Column(name = "solicitacao_tipo_requisito_descricao", nullable = false)
 	private String Descricao;
 	
-	@Column(name = "solicitacao_tipo_prazo", nullable = false)
-	private int TipoPrazo;
+	@Column(name = "solicitacao_tipo_requisito_status", nullable = false)
+	private int Status;
 	
-	@Column(name = "solicitacao_tipo_status", nullable = false)
-	private int TipoStatus;
+	@Column(name = "solicitacao_tipo_requisito_tipo_campo", nullable = false)
+	private int TipoCampo;
 	
-	
+	@ManyToOne
+	@JoinColumn(name = "solicitacao_tipo_id")
+	private SolicitacaoTipo solicitacaoTipo;
 	
 	public int getId() {
 		return Id;
@@ -45,16 +47,17 @@ public class TipoSolicitacao implements Serializable {
 	public void setDescricao(String descricao) {
 		Descricao = descricao;
 	}
-	public int getTipoPrazo() {
-		return TipoPrazo;
+	public int getStatus() {
+		return Status;
 	}
-	public void setTipoPrazo(int tipoPrazo) {
-		TipoPrazo = tipoPrazo;
+	public void setStatus(int status) {
+		Status = status;
 	}
-	public int getTipoStatus() {
-		return TipoStatus;
+	public int getTipoCampo() {
+		return TipoCampo;
 	}
-	public void setTipoStatus(int tipoStatus) {
-		TipoStatus = tipoStatus;
+	public void setTipoCampo(int tipoCampo) {
+		TipoCampo = tipoCampo;
 	}
+	
 }

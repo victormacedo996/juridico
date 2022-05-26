@@ -9,7 +9,7 @@ export class TipoSolicitacaoService {
 
   constructor(private http: HttpClient) { }
   buscarTipoSolicitacao(){
-    let url = `${environment.apiBaseUrl}/api/tipoSolicitacao`;
+    let url = `${environment.apiBaseUrl}/api/solicitacaoTipo`;
     return this.http.get(url);
   }
 }

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.senac.juridico.model.RequisitoTemplate;
-import br.senac.juridico.model.TipoSolicitacao;
 import br.senac.juridico.service.RequisitoTemplateService;
 
 @RestController

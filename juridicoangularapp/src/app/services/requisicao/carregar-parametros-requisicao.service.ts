@@ -9,7 +9,7 @@ export class CarregarParametrosRequisicaoService {
   constructor(private http: HttpClient) { }
 
   carregarParametrosRequisicao(){
-    let url = `${environment.apiBaseUrl}/api/tipoSolicitacao`;
+    let url = `${environment.apiBaseUrl}/api/solicitacaoTipo`;
     return this.http.get(url);
   }
 }
