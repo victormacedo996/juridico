@@ -11,6 +11,10 @@ import br.senac.juridico.repository.AtendimentoAnaliseJuridicoRepository;
 
 @Service
 public class AtendimentoAnaliseJuridicoService {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	private final AtendimentoAnaliseJuridicoRepository atendimentoAnaliseJuridicoRepository;
 
 	@Autowired
@@ -38,4 +42,8 @@ public class AtendimentoAnaliseJuridicoService {
 	public List<AtendimentoAnaliseJuridico> buscarAtendimentoAnaliseJuridicoAtivos(){
 		return atendimentoAnaliseJuridicoRepository.buscarAtendimentoAnaliseJuridicoAtivos();
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

@@ -11,6 +11,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "atendimento_analise_juridico")
 public class AtendimentoAnaliseJuridico implements Serializable{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	private static final long serialVersionUID = -2372052507147264884L;
 
 	@Id
@@ -36,6 +40,11 @@ public class AtendimentoAnaliseJuridico implements Serializable{
 	@JoinColumn(name = "solicitacao_analise_id")
 	private SolicitacaoAnaliseJuridico solicitacaoId;
 
+<<<<<<< HEAD
+=======
+	//nome do atributo de join está respondavel_usuario_id
+	//no diagrama de relacionamento está OneToOne???
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	@OneToOne
 	@JoinColumn(name = "responsavel_usuario_id")
 	private Usuario usuario;
@@ -97,4 +106,8 @@ public class AtendimentoAnaliseJuridico implements Serializable{
 	}
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
