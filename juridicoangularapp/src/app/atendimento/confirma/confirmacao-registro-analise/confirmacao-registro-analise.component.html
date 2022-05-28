@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Confirmação</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Registro de análise de atendimento</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Observação...</mat-label>
+            <textarea matInput readonly  appearance="fill"></textarea>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Salvar</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+    </mat-dialog-actions>

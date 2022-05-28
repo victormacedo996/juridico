@@ -2,8 +2,11 @@ import { RegistroAnaliseAtendimentoComponent } from './registro-analise-atendime
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input'
-import {MatButtonModule} from '@angular/material/button'
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatButtonModule} from '@angular/material/button';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog'
 
 
 @NgModule({
@@ -12,9 +15,13 @@ import {MatButtonModule} from '@angular/material/button'
     CommonModule,
     MatTableModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatDialogModule
+
     
   ],
-  exports: []
+  exports: [RegistroAnaliseAtendimentoComponent]
 })
 export class RegistroAnaliseAtendimentoModule { }
