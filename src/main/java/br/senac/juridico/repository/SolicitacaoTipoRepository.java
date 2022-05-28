@@ -8,9 +8,15 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+<<<<<<< HEAD
 import org.springframework.transaction.annotation.Transactional;
 
 import br.senac.juridico.model.SolicitacaoTipo;
+=======
+
+import br.senac.juridico.model.SolicitacaoTipo;
+import jakarta.transaction.Transactional;
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 
 @Repository
 public interface SolicitacaoTipoRepository extends JpaRepository<SolicitacaoTipo, Integer>{
@@ -30,4 +36,8 @@ public interface SolicitacaoTipoRepository extends JpaRepository<SolicitacaoTipo
     @Transactional
     @Query(value = "UPDATE solicitacao_tipo SET solicitacao_tipo_status = 0 WHERE solicitacao_tipo_id = :id", nativeQuery = true)
 	void desativarSolicitacaoTipoPorId(@Param("id") Integer id);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

@@ -3,11 +3,24 @@ package br.senac.juridico.model;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
+<<<<<<< HEAD
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+=======
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "atendimento_registro_envolvido")
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 public class AtendimentoRegistroEnvolvido implements Serializable{
 
 	/**
@@ -30,8 +43,13 @@ public class AtendimentoRegistroEnvolvido implements Serializable{
 	private int status;
 
 	//@ManyToMany????????????
+<<<<<<< HEAD
 	@OneToMany
 	@Column(name = "atendimento_registro_id")
+=======
+	@ManyToOne
+	@JoinColumn(name = "atendimento_registro_id")
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	private AtendimentoRegistro atendimentoRegistro;
 
 	public Integer getId() {
@@ -74,4 +92,8 @@ public class AtendimentoRegistroEnvolvido implements Serializable{
 		this.atendimentoRegistro = atendimentoRegistro;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

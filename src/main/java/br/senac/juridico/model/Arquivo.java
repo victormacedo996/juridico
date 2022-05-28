@@ -78,4 +78,8 @@ public class Arquivo implements Serializable{
 		this.status = status;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
