@@ -11,8 +11,8 @@ import { AdicionarEmpresaComponent } from './components/Empresa/adicionar-empres
 import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empresa/atualizar-empresa.component';
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ConfirmacaoRegistroAnaliseModule } from './components/atendimento/confirmacao-registro-analise/confirmacao-registro-analise/confirmacao-registro-analise.module';
 import { RegistroAnaliseAtendimentoModule } from './components/atendimento/registro-analise-atendimento/registro-analise-atendimento.module';
+import { ConfirmacaoRegistroAnaliseModule } from './components/atendimento/confirmacao-registro-analise/confirmacao-registro-analise.module';
 @NgModule({
   declarations: [
     AppComponent,
