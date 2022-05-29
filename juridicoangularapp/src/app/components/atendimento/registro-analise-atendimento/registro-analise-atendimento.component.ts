@@ -1,4 +1,4 @@
-import { ConfirmacaoRegistroAnaliseComponent } from './../confirma/confirmacao-registro-analise/confirmacao-registro-analise.component';
+import { ConfirmacaoRegistroAnaliseComponent } from '../confirmacao-registro-analise/confirmacao-registro-analise/confirmacao-registro-analise.component';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';

@@ -1,4 +1,4 @@
-import { RegistroAnaliseAtendimento } from './../../models/RegistroAnaliseAtendimento';
+import { RegistroAnaliseAtendimento } from '../../../models/RegistroAnaliseAtendimento';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';

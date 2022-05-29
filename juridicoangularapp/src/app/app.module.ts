@@ -1,4 +1,3 @@
-import { ConfirmacaoRegistroAnaliseModule } from './atendimento/confirma/confirmacao-registro-analise/confirmacao-registro-analise.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,8 +10,9 @@ import { ListarEmpresasComponent } from './components/Empresa/listar-empresas/li
 import { AdicionarEmpresaComponent } from './components/Empresa/adicionar-empresa/adicionar-empresa.component';
 import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empresa/atualizar-empresa.component';
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
-import { RegistroAnaliseAtendimentoModule } from './atendimento/registro-analise-atendimento/registro-analise-atendimento.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmacaoRegistroAnaliseModule } from './components/atendimento/confirmacao-registro-analise/confirmacao-registro-analise/confirmacao-registro-analise.module';
+import { RegistroAnaliseAtendimentoModule } from './components/atendimento/registro-analise-atendimento/registro-analise-atendimento.module';
 @NgModule({
   declarations: [
     AppComponent,
