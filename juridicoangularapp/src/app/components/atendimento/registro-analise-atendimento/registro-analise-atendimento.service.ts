@@ -1,6 +1,6 @@
-import { RegistroAnaliseAtendimento } from '../../../models/RegistroAnaliseAtendimento';
-import { Injectable } from '@angular/core';
+import { RegistroAnaliseAtendimento } from './../../../models/RegistroAnaliseAtendimento';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -15,15 +15,15 @@ const httpOptions = {
 })
 export class RegistroAnaliseAtendimentoService {
 
-  url = `${environment.apiBaseUrl}/api/atendimento/registrarAnalise`;
+  url = `${environment.apiBaseUrl}/api/registroAnaliseAtendimento`;
 
   constructor(private http: HttpClient) { }
 
-  listarEmpresas(): Observable<RegistroAnaliseAtendimento[]>{
+  public listaRegistroAtendimento(): Observable<RegistroAnaliseAtendimento[]>{
     const apiUrl = `${this.url}/`;
-    console.log(apiUrl);
     return this.http.get<RegistroAnaliseAtendimento[]>(apiUrl);
   }
+
   public adicionarRegistroAtendimento(registroAnalise: RegistroAnaliseAtendimento): Observable<any>{
     const apiUrl = `${this.url}/adicionar`;
     return this.http.post<RegistroAnaliseAtendimento>(apiUrl, registroAnalise);
@@ -34,8 +34,8 @@ export class RegistroAnaliseAtendimentoService {
     return this.http.put<RegistroAnaliseAtendimento>(apiUrl, registroAnalise);
   }
 
-  public apagarRegistroAtendimento(id: number): Observable<any>{
-    const apiUrl = `${this.url}/apagar/${id}`;
+  public apagarFRegistroAtendimento(registroAtendimentoId: number): Observable<any>{
+    const apiUrl = `${this.url}/apagar/${registroAtendimentoId}`;
     return this.http.delete<RegistroAnaliseAtendimento>(apiUrl);
-  }
+   }
 }

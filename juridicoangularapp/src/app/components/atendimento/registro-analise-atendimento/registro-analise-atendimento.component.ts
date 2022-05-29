@@ -26,6 +26,7 @@ export class RegistroAnaliseAtendimentoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getAllRegistros();
   }
 
 
@@ -40,5 +41,10 @@ export class RegistroAnaliseAtendimentoComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+
+  public getAllRegistros() {
+
   }
 }
