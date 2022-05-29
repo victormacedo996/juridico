@@ -11,10 +11,6 @@ import br.senac.juridico.repository.SolicitacaoAnaliseJuridicoRepository;
 
 @Service
 public class SolicitacaoAnaliseJuridicoService {
-<<<<<<< HEAD
-=======
-
->>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	private final SolicitacaoAnaliseJuridicoRepository solicitacaoAnaliseJuridicoRepository;
 
 	@Autowired
@@ -30,11 +26,7 @@ public class SolicitacaoAnaliseJuridicoService {
 		return solicitacaoAnaliseJuridicoRepository.save(solicitacaoAnaliseJuridico);
 	}
 	
-<<<<<<< HEAD
 	public void apagarSolicitacaoAnaliseJuridico(int id) {
-=======
-	public void excluirSolicitacaoAnaliseJuridico(int id) {
->>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 		solicitacaoAnaliseJuridicoRepository.apagarSolicitacaoAnaliseJuridicoPorId(id);
 	}
 	
@@ -46,9 +38,5 @@ public class SolicitacaoAnaliseJuridicoService {
 	public List<SolicitacaoAnaliseJuridico> buscarSolicitacaoAnaliseJuridicoAtivos(){
 		return solicitacaoAnaliseJuridicoRepository.buscarSolicitacaoAnaliseJuridicoAtivos();
 	}
-<<<<<<< HEAD
 
 }
-=======
-}
->>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

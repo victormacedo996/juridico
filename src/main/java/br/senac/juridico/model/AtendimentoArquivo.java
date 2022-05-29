@@ -24,13 +24,7 @@ public class AtendimentoArquivo implements Serializable{
 	@JoinColumn(name = "atendimento_registro_id")
 	private AtendimentoRegistro atendimentoRegistro;
 
-<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "arquivo_id")
 	private Arquivo arquivo_id;
 }
-=======
-	@Column(name = "arquivo_id", nullable = false)
-	private Integer arquivo_id;
-}
->>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

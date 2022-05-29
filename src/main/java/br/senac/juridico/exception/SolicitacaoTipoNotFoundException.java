@@ -2,7 +2,6 @@ package br.senac.juridico.exception;
 
 public class SolicitacaoTipoNotFoundException extends RuntimeException{
 
-<<<<<<< HEAD
 	/**
 	 * 
 	 */
@@ -13,11 +12,3 @@ public class SolicitacaoTipoNotFoundException extends RuntimeException{
 	}
 
 }
-=======
-	private static final long serialVersionUID = 1L;
-
-	public SolicitacaoTipoNotFoundException(String mensagem) {
-		super(mensagem);
-	}
-}
->>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
