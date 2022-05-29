@@ -16,6 +16,12 @@ import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
 import { SolicitacaoAnaliseJuridicoComponent } from './components/Solicitacao-Analise-Juridico/solicitacao-analise-juridico.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,12 @@ import { SolicitacaoAnaliseJuridicoComponent } from './components/Solicitacao-An
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgSelectModule
+    NgSelectModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
