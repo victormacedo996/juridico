@@ -2,34 +2,6 @@ package br.senac.juridico.model;
 
 import java.io.Serializable;
 
-<<<<<<< HEAD
-import jakarta.persistence.*;
-
-@Entity
-public class SolicitacaoTipo implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "solicitacao_tipo_id", nullable = false)
-	private int id;
-	
-	@Column(name = "solicitacao_tipo_descricao", nullable = false)
-	private String descricao;
-	
-	@Column(name = "solicitacao_tipo_prazo", nullable = false)
-	private int prazo;
-	
-	@Column(name = "solicitacao_tipo_status", nullable = false)
-	private int status;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-=======
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -61,7 +33,6 @@ public class SolicitacaoTipo implements Serializable{
 	}
 
 	public void setId(Integer id) {
->>>>>>> master
 		this.id = id;
 	}
 
@@ -88,10 +59,5 @@ public class SolicitacaoTipo implements Serializable{
 	public void setStatus(int status) {
 		this.status = status;
 	}
-<<<<<<< HEAD
-	
-}
-=======
 
 }
->>>>>>> master

@@ -1,43 +1,8 @@
 package br.senac.juridico.model;
 
 import java.io.Serializable;
-<<<<<<< HEAD
-import java.util.Date;
-
-import jakarta.persistence.*;
-
-@Entity
-public class SolicitacaoAnaliseJuridico implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "solicitacao_analise_id", nullable = false)
-	private int id;
-	
-	@Column(name = "solicitacao_analise_numero", nullable = false)
-	private int numero;
-	
-	@Column(name = "solicitacao_analise_dataRegistro", nullable = false)
-	private Date dataRegistro;
-	
-	@Column(name = "solicitacao_analise_titulo", nullable = false)
-	private String titulo;
-	
-	@Column(name = "solicitacao_analise_observacao", nullable = true)
-	private String observacao;	
-	
-	@Column(name = "solicitacao_analise_status", nullable = false)
-	private int status;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-=======
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -48,6 +13,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -82,9 +49,16 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 	@JoinColumn(name = "solicitacao_tipo_id")
 	private SolicitacaoTipo solicitacaoTipo;
 
-	@ManyToOne
-	@JoinColumn(name = "usuario_id")
-	private Usuario usuario;
+	@ManyToMany
+	@JoinTable(
+			name="solicitacao_alocacao",
+			joinColumns = {@JoinColumn(name = "solicitacao_analise_id")},
+			inverseJoinColumns = {@JoinColumn(name = "usuario_id")})
+	private List<Usuario> usuario;
+
+	public void setUsuario(List<Usuario> usuario) {
+		this.usuario = usuario;
+	}
 
 	@ManyToOne
 	@JoinColumn(name = "solicitacao_prioridade_id")
@@ -95,7 +69,6 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 	}
 
 	public void setId(Integer id) {
->>>>>>> master
 		this.id = id;
 	}
 
@@ -107,19 +80,11 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 		this.numero = numero;
 	}
 
-<<<<<<< HEAD
-	public Date getDataRegistro() {
-		return dataRegistro;
-	}
-
-	public void setDataRegistro(Date dataRegistro) {
-=======
 	public LocalDateTime getDataRegistro() {
 		return dataRegistro;
 	}
 
 	public void setDataRegistro(LocalDateTime dataRegistro) {
->>>>>>> master
 		this.dataRegistro = dataRegistro;
 	}
 
@@ -146,10 +111,6 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 	public void setStatus(int status) {
 		this.status = status;
 	}
-<<<<<<< HEAD
-	
-}
-=======
 
 	public SolicitacaoTipo getSolicitacaoTipo() {
 		return solicitacaoTipo;
@@ -157,14 +118,6 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 
 	public void setSolicitacaoTipo(SolicitacaoTipo solicitacaoTipo) {
 		this.solicitacaoTipo = solicitacaoTipo;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 	public SolicitacaoPrioridade getPrioridade() {
@@ -175,5 +128,4 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 		this.prioridade = prioridade;
 	}
 
-}
->>>>>>> master
+} 

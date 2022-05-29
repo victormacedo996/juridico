@@ -6,6 +6,7 @@ import java.util.Date;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="solicitacao_alocacao")
 public class SolicitacaoAlocacao implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
