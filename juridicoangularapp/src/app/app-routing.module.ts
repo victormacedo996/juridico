@@ -2,14 +2,20 @@ import { RequisicaoComponent } from './components/requisicao/requisicao.componen
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarEmpresasComponent } from './components/Empresa/listar-empresas/listar-empresas.component';
+import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
+import { SolicitacaoAnaliseJuridicoComponent } from './components/Solicitacao-Analise-Juridico/solicitacao-analise-juridico.component';
 
 const routes: Routes = [
   {
     path: 'empresas/listarEmpresas', component: ListarEmpresasComponent
   },
   {
-    path: 'requisicao', component: RequisicaoComponent
-  }
+    path: 'solicitacaoAnaliseJuridico', component: SolicitacaoAnaliseJuridicoComponent
+  },
+  {
+     path: '', component: ConsultarComponent
+    , pathMatch: 'full' },
+  
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ import { CadastroRequisicaoComponent } from './components/requisicao/cadastro-re
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
+import { SolicitacaoAnaliseJuridicoComponent } from './components/Solicitacao-Analise-Juridico/solicitacao-analise-juridico.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ConsultarComponent } from './components/consultar-solicitacoes/consulta
     ApagarEmpresaComponent,
     RequisicaoComponent,
     CadastroRequisicaoComponent,
-    ConsultarComponent
+    ConsultarComponent,
+    SolicitacaoAnaliseJuridicoComponent
   ],
   imports: [
     FormsModule,
