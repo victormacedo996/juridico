@@ -8,9 +8,15 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+<<<<<<< HEAD
+import org.springframework.transaction.annotation.Transactional;
+
+import br.senac.juridico.model.AtendimentoAnaliseJuridico;
+=======
 
 import br.senac.juridico.model.AtendimentoAnaliseJuridico;
 import jakarta.transaction.Transactional;
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 
 @Repository
 public interface AtendimentoAnaliseJuridicoRepository extends JpaRepository<AtendimentoAnaliseJuridico, Integer>{
@@ -30,4 +36,8 @@ public interface AtendimentoAnaliseJuridicoRepository extends JpaRepository<Aten
     @Transactional
     @Query(value = "UPDATE atendimento_analise_juridico SET atendimento_analise_juridico_status = 0 WHERE atendimento_analise_juridico_id = :id", nativeQuery = true)
 	void desativarAtendimentoAnaliseJuridicoPorId(@Param("id") Integer id);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

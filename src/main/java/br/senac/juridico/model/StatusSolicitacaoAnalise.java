@@ -10,19 +10,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "solicitacao_prioridade")
-public class SolicitacaoPrioridade implements Serializable{
-	private static final long serialVersionUID = -6166909897933796410L;
-
+@Table(name = "status_solicitacao_analise")
+public class StatusSolicitacaoAnalise implements Serializable{
+	private static final long serialVersionUID = -5621647006169043658L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "solicitacao_prioridade_id", nullable = false)
+	@Column(name = "status_solicitacao_analise_id", nullable = false)
 	private Integer id;
-
-	@Column(name = "solicitacao_prioridade_descricao", nullable = false)
+	
+	@Column(name = "status_solicitacao_analise_descricao", nullable = false)
 	private String descricao;
-
-	@Column(name = "solicitacao_prioridade_status", nullable = false)
+	
+	@Column(name = "status_solicitacao_analise_status", nullable = false)
 	private int status;
 
 	public Integer getId() {
@@ -49,8 +49,6 @@ public class SolicitacaoPrioridade implements Serializable{
 		this.status = status;
 	}
 
-<<<<<<< HEAD
+	
+
 }
-=======
-}
->>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

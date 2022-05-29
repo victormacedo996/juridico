@@ -3,21 +3,17 @@ package br.senac.juridico.model;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+
 @Entity
-@Table(name="atendimento_registro_envolvido")
+@Table(name = "atendimento_registro_envolvido")
 public class AtendimentoRegistroEnvolvido implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8006299626149020540L;
 
 	@Id

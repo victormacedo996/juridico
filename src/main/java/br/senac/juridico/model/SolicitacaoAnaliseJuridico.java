@@ -18,7 +18,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="solicitacao_analise_juridico")
 public class SolicitacaoAnaliseJuridico implements Serializable{
+<<<<<<< HEAD
+=======
 
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	private static final long serialVersionUID = -8597563105451013420L;
 
 	@Id
@@ -126,4 +129,8 @@ public class SolicitacaoAnaliseJuridico implements Serializable{
 		this.prioridade = prioridade;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

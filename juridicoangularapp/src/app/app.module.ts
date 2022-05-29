@@ -13,7 +13,8 @@ import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apag
 import { RequisicaoComponent } from './components/requisicao/requisicao.component';
 import { CadastroRequisicaoComponent } from './components/requisicao/cadastro-requisicao/cadastro-requisicao.component';
 import { FormsModule } from '@angular/forms';
-import { NgSelectModule } from '@ng-select/ng-select'
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgSelectModule } from '@ng-select/ng-select'
     AtualizarEmpresaComponent,
     ApagarEmpresaComponent,
     RequisicaoComponent,
-    CadastroRequisicaoComponent
+    CadastroRequisicaoComponent,
+    ConsultarComponent
   ],
   imports: [
     FormsModule,

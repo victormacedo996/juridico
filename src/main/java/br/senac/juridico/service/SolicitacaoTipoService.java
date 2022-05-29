@@ -11,7 +11,10 @@ import br.senac.juridico.repository.SolicitacaoTipoRepository;
 
 @Service
 public class SolicitacaoTipoService {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 	private final SolicitacaoTipoRepository solicitacaoTipoRepository;
 
 	@Autowired
@@ -27,7 +30,11 @@ public class SolicitacaoTipoService {
 		return solicitacaoTipoRepository.save(solicitacaoTipo);
 	}
 	
+<<<<<<< HEAD
+	public void apagarSolicitacaoTipo(int id) {
+=======
 	public void excluirSolicitacaoTipo(int id) {
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629
 		solicitacaoTipoRepository.apagarSolicitacaoTipoPorId(id);
 	}
 	
@@ -39,4 +46,9 @@ public class SolicitacaoTipoService {
 	public List<SolicitacaoTipo> buscarSolicitacaoTipoAtivas(){
 		return solicitacaoTipoRepository.buscarSolicitacaoTipoAtivas();
 	}
+<<<<<<< HEAD
+	
 }
+=======
+}
+>>>>>>> 58e93e49a595d6bb26e324707f741cf5041ee629

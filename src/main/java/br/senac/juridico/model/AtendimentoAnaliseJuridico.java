@@ -36,7 +36,7 @@ public class AtendimentoAnaliseJuridico implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "solicitacao_analise_id")
 	private SolicitacaoAnaliseJuridico solicitacaoId;
-	
+
 	@OneToOne
 	@JoinColumn(name = "responsavel_usuario_id")
 	private Usuario usuario;
@@ -96,6 +96,5 @@ public class AtendimentoAnaliseJuridico implements Serializable{
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-
 }
+
