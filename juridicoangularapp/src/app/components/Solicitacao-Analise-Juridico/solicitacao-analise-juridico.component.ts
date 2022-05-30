@@ -3,7 +3,9 @@ import { FormBuilder } from '@angular/forms';
 import { forkJoin, map } from 'rxjs';
 import { soliocitacaoAnaliseJuridico } from 'src/app/models/solocitacaoAnaliseJuridico';
 import { PrioridadeService } from 'src/app/services/requisicao/prioridade.service';
+import { RequisicaoService } from 'src/app/services/requisicao/requisicao.service';
 import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicitacao.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-solicitacao-analise-juridico',
@@ -12,7 +14,7 @@ import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicit
 })
 export class SolicitacaoAnaliseJuridicoComponent implements OnInit {
 
-  constructor(private tipoSolicitacao:TipoSolicitacaoService,private prioridadeService:PrioridadeService, private formBuilder: FormBuilder,) { }
+  constructor(private tipoSolicitacao:TipoSolicitacaoService,private prioridadeService:PrioridadeService, private formBuilder: FormBuilder,private requisicao:RequisicaoService) { }
   params:any;
   tipoSolicitacaoParams:any;
   prioridadeParams:any;
@@ -42,7 +44,6 @@ export class SolicitacaoAnaliseJuridicoComponent implements OnInit {
       (response) => {
         //vários objetos são salvos nessa variável
         //variável que é passada para a modal para carregar alguns dados
-        debugger;
         this.params = response;
         this.tipoSolicitacaoParams = response.tipoSolicitacao;
         this.prioridadeParams = response.prioridadeService;
@@ -56,6 +57,11 @@ export class SolicitacaoAnaliseJuridicoComponent implements OnInit {
   Salvar(){
     this.solicitacaoAnaliseJuridico.tipoSolicitacao = this.tipoSolicitacaoId
     this.solicitacaoAnaliseJuridico.prioridade = this.prioridadeId
-    console.log(this.solicitacaoAnaliseJuridico)
+    this.requisicao.criarRequisicao(this.solicitacaoAnaliseJuridico).subscribe(response => {
+      Swal.fire('Success', 'Solicitacao criada com sucesso!', 'success');
+      
+    },error =>{
+      Swal.fire('Error', 'Error ao criar a solicitacao', 'error');
+    })
   }
 }

@@ -4,7 +4,6 @@
    A controller que receberá esses dados no back-end será a AnaliseJuridicoController.java
 */
 import { Component, Input, OnInit } from '@angular/core';
-import { CarregarParametrosRequisicaoService } from 'src/app/services/requisicao/carregar-parametros-requisicao.service';
 import { RequisitoTemplateService } from 'src/app/services/requisicao/requisito-template.service';
 import { TipoSolicitacaoService } from 'src/app/services/requisicao/tipo-solicitacao.service';
 import { forkJoin, map } from 'rxjs';
