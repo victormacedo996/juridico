@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { analiseJuridico } from 'src/app/models/analiseJuridico';
+import { soliocitacaoAnaliseJuridico } from 'src/app/models/solocitacaoAnaliseJuridico';
 import { environment } from 'src/environments/environment';
 
 
@@ -11,7 +11,7 @@ export class RequisicaoService {
   url:string = `${environment.apiBaseUrl}/api/analiseJuridico`
 
   constructor(private http: HttpClient) { }
-  criarRequisicao(requisicao:analiseJuridico){
+  criarRequisicao(requisicao:soliocitacaoAnaliseJuridico){
     debugger;
     return this.http.post(this.url,requisicao);
   }

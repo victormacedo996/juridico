@@ -12,7 +12,7 @@ import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empres
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
 import { RequisicaoComponent } from './components/requisicao/requisicao.component';
 import { CadastroRequisicaoComponent } from './components/requisicao/cadastro-requisicao/cadastro-requisicao.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
 import { SolicitacaoAnaliseJuridicoComponent } from './components/Solicitacao-Analise-Juridico/solicitacao-analise-juridico.component';
@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgSelectConfig } from '@ng-select/ng-select';
-import { analiseJuridico } from 'src/app/models/analiseJuridico';
 import { requisicaoTemplate } from 'src/app/models/requisicaoTemplate';
+import { soliocitacaoAnaliseJuridico } from 'src/app/models/solocitacaoAnaliseJuridico';
 import { tipoSolicitacao } from 'src/app/models/tipoSolicitacao';
 
 @Component({
@@ -12,10 +12,10 @@ import { tipoSolicitacao } from 'src/app/models/tipoSolicitacao';
 export class CadastroRequisicaoComponent implements OnInit {
   @Input() params: any;
   @Output() onCloseModal: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() onSave: EventEmitter<analiseJuridico> = new EventEmitter<analiseJuridico>();
+  @Output() onSave: EventEmitter<soliocitacaoAnaliseJuridico> = new EventEmitter<soliocitacaoAnaliseJuridico>();
   tipoSolicitacao: Array<tipoSolicitacao> = new Array<tipoSolicitacao>();
   requisicaoTemplate: Array<requisicaoTemplate> = new Array<requisicaoTemplate>();
-  analiseJuridico: analiseJuridico = new analiseJuridico();
+  analiseJuridico: soliocitacaoAnaliseJuridico = new soliocitacaoAnaliseJuridico();
   prioridade: any;
 
   constructor(private config: NgSelectConfig) {
@@ -50,7 +50,7 @@ export class CadastroRequisicaoComponent implements OnInit {
     validator ? this.salvarRequisicao() : this.mensagemCampoVazio();
   }
   //verifica se todos os campos estão preenchidos e retorna boolean
-  verifyFields(requisicao: analiseJuridico): boolean {
+  verifyFields(requisicao: soliocitacaoAnaliseJuridico): boolean {
     let campos = [requisicao.titulo, requisicao.tipoSolicitacao, requisicao.prioridade];
     for (let campo of campos) {
       //verificação para null e para string vazia

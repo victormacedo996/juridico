@@ -1,8 +1,9 @@
-<header class="container-fluid"id="header">
+<header class="container-fluid" id="header">
     <div class="col-xl-7 col-lg-7 col-md-5 col-sm-4 col-3">
-        <a id="logo" href="#"><img src="https://logodownload.org/wp-content/uploads/2014/10/senac-logo-2-1.png" alt=""></a>
+        <a id="logo" href="#"><img src="https://logodownload.org/wp-content/uploads/2014/10/senac-logo-2-1.png"
+                alt=""></a>
     </div>
-    
+
     <nav class="col-xl-5 col-lg-5 col-md-7 col-sm-8 col-9" id="nav">
         <ul id="menu">
             <li><a href="#">Sobre</a></li>
@@ -23,69 +24,59 @@
 </div>
 
 <div id="preenchimento">
-<div class="container">
+    <div class="container">
         <div class="row" id="titulo">
             <p>Cadastro de Solicitação</p>
         </div>
-        <div class="row campo">        
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Nome do solicitante</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>
-        
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Nome do responsável designado</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>                   
+        <div class="row campo">
+            <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
+                <mat-label>Titulo</mat-label>
+                <input [(ngModel)]="this.solicitacaoAnaliseJuridico.titulo" matInput placeholder="titulo da requisição" >
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
+                <mat-label>Tipo da Solicitação</mat-label>
+                <mat-select [(ngModel)]="this.tipoSolicitacaoId">
+                    <mat-option *ngFor="let solicitacao of this.tipoSolicitacaoParams" [value]="solicitacao.id">
+                      {{solicitacao.descricao}}
+                    </mat-option>
+                  </mat-select>
+                  
+            </mat-form-field>
         </div>
         <div class="row campo">
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Nome da unidade</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Nome da área</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>                   
+            <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
+                <mat-label>Prioridade do processo</mat-label>
+                <mat-select [(ngModel)]="this.prioridadeId">
+                    <mat-option *ngFor="let prioridade of this.prioridadeParams" [value]="prioridade.id">
+                      {{prioridade.descricao}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
         </div>
         <div class="row campo">
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Nome ou número do processo</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Situação da solicitação</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>                   
-        </div>
-        <div class="row campo">
-                <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
-                    <mat-label>Prioridade do processo</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="">
-                </mat-form-field>          
-        </div>
-        <div class="row campo">
-            <mat-form-field  class="example-full-width inputs col-xl-10 col-lg-10 col-md-10 col-sm-11 col-11" appearance="fill">
-                <mat-label>Comentário</mat-label>
-                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <mat-form-field class="example-full-width inputs col-xl-10 col-lg-10 col-md-10 col-sm-11 col-11"
+                appearance="fill">
+                <mat-label>Observação</mat-label>
+                <textarea [(ngModel)]="this.solicitacaoAnaliseJuridico.observacao" matInput placeholder="Ex. It makes me feel..."></textarea>
             </mat-form-field>
         </div>
         <div class="row">
             <div class="cadastro-footer">
-                <button mat-raised-button id="confirmar"><a href="#">Confirmar</a></button>
+                <button (click)="Salvar()" mat-raised-button id="confirmar"><a href="#">Confirmar</a></button>
                 <button mat-raised-button id="cancelar"><a href="#">Cancelar</a></button>
             </div>
         </div>
-</div>
+    </div>
 </div>
 
 <div class="container-fluid" id="footer-pag">
-    
-        <div class="col-xl-5 col-lg-5 col-md-4 col-sm-4 col-4 d-flex justify-content-center">
-            <img src="https://logodownload.org/wp-content/uploads/2014/10/senac-logo-2-1.png" alt="SENAC">
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 direitos ">
-            <p>© Todos os Direitos Reservados - 2017.</p>   
-        </div>
-    
+
+    <div class="col-xl-5 col-lg-5 col-md-4 col-sm-4 col-4 d-flex justify-content-center">
+        <img src="https://logodownload.org/wp-content/uploads/2014/10/senac-logo-2-1.png" alt="SENAC">
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 direitos ">
+        <p>© Todos os Direitos Reservados - 2017.</p>
+    </div>
+
 </div>

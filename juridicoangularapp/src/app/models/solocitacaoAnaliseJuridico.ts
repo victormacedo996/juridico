@@ -2,7 +2,7 @@ import { arquivo } from "./arquivo";
 import { tipoSolicitacao } from "./tipoSolicitacao";
 import { usuario } from "./usuario";
 
-export class analiseJuridico{
+export class soliocitacaoAnaliseJuridico{
     id?:number;
     analiseNumero?:number;
     analiseDataRegistro?:Date;
@@ -11,5 +11,5 @@ export class analiseJuridico{
     status?:number;
     prioridade?:number;
     usuario?:usuario;
-    tipoSolicitacao?:tipoSolicitacao;
+    tipoSolicitacao?:number;
 }
