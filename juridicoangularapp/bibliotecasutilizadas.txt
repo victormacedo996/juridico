@@ -1,0 +1,11 @@
+SWEET ALERT
+https://sweetalert2.github.io/
+npm install sweetalert2 @sweetalert2/ngx-sweetalert2
+
+NG SELECT
+https://www.npmjs.com/package/@ng-select/ng-select
+npm install --save @ng-select/ng-select
+
+ANGULAR MATERIAL
+https://www.npmjs.com/package/@angular/material
+npm i @angular/material
