@@ -15,9 +15,6 @@ import jakarta.persistence.Table;
 @Table(name = "atendimento_registro_envolvido")
 public class AtendimentoRegistroEnvolvido implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8006299626149020540L;
 
 	@Id
@@ -34,7 +31,6 @@ public class AtendimentoRegistroEnvolvido implements Serializable{
 	@Column(name = "atendimento_registro_envolvido_status")
 	private int status;
 
-	//@ManyToMany????????????
 	@ManyToOne
 	@JoinColumn(name = "atendimento_registro_id")
 	private AtendimentoRegistro atendimentoRegistro;

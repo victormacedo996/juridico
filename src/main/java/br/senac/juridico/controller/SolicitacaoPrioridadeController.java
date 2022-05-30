@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.senac.juridico.model.SolicitacaoPrioridade;
 import br.senac.juridico.service.SolicitacaoPrioridadeService;
 
-@Controller
+@RestController
 @RequestMapping("api/solicitacaoPrioridade")
 public class SolicitacaoPrioridadeController {
 
