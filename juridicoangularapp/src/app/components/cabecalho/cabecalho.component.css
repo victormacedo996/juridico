@@ -1,0 +1,197 @@
+body{
+    margin: auto;
+    background-color: #F5F5F5;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*INÍCIO NAV*/
+header{
+    background-color: #ECECEC;
+    margin: 0;
+    padding:0;
+    text-decoration: none;
+}
+
+header ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+header a{
+    color:rgb(0, 0, 0);
+    list-style: none;
+    text-decoration: none;
+}
+
+#logo:hover{
+    color:white;
+    text-decoration: underline;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    height: 10%;
+    padding:1.5% 3% 1.5% 3%;
+    justify-content: space-between;
+}
+
+#logo img{
+    height:40px;  
+    width:62px;
+}
+
+#menu{
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+}
+
+#menu li{
+    display: block;
+    padding: 0 1.5rem 0 0;
+    font-size: 24px;
+}
+
+#nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#usuario{
+    display: flex;
+    align-items: center;
+}
+
+#user{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+#p1{
+    color: #8B8683;
+    font-size: calc(6px+(15-6)*((60vw-300px)/(1600-300)));
+    margin: 0;
+}
+
+
+#p2 { 
+    font-size: calc(10px+(20-10)*((60vw-300px)/(1200-300)));
+    margin:0;
+}
+
+
+/* #imagemPerfil{
+} */
+/*FIM NAV*/
+
+/*INÍCIO DOS INPUTS*/
+#identificacao{
+    background-color: #034C8C;
+    height: 2%;
+}
+
+#titulo p{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 0 0 4% 0;
+}
+
+.campo{
+    display:flex;
+    justify-content: center;
+} 
+
+#preenchimento{
+    padding-left: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 4% 0 4% 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastro-footer button{
+    margin: 2% 1% 0 1%;
+}
+
+.cadastro-footer button a{
+    color:white;
+    text-decoration: none;
+}
+
+.cadastro-footer button a :hover{
+    color:white;
+    text-decoration: none;
+}
+
+.cadastro-footer #confirmar{
+    color: white;
+    background-color: #286432;
+    padding: 0.5% 3.5% 0.5% 3.5%;
+}
+
+.cadastro-footer #confirmar:hover{
+    color:white;
+    background-color: #286432;
+    text-decoration: none;
+    border-color: none;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.cadastro-footer #cancelar{
+    color: white;
+    background-color: #E31A1A;
+    padding: 0.5% 4% 0.5% 4%;
+}
+
+.cadastro-footer #cancelar:hover{
+    color:white;
+    background-color: #BD1414;
+    text-decoration: none;
+    border-color: none;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.cadastro-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*FIM DOS INPUTS*/
+
+/*INÍCIO FOOTER*/
+#footer-pag{
+    padding: 1% 3% 1% 3%;
+    margin:auto 0;
+    background-color: #F2F2F2;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+}
+
+#footer-pag img{
+    height:30px;
+    width:44px;
+}
+
+.direitos{
+	height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#footer-pag{
+    font-size: calc(6px+(10-6)*((60vw-300px)/(1600-300)));
+}
+/*FIM FOOTER*/

@@ -4,7 +4,7 @@ import { ListarEmpresasComponent } from './components/Empresa/listar-empresas/li
 
 const routes: Routes = [
   {
-    path: 'empresas/listarEmpresas', component: ListarEmpresasComponent
+    path: '', component: ListarEmpresasComponent
   }
 ];
 

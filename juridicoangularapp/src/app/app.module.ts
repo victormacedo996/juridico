@@ -12,6 +12,8 @@ import { AtualizarEmpresaComponent } from './components/Empresa/atualizar-empres
 import { ApagarEmpresaComponent } from './components/Empresa/apagar-empresa/apagar-empresa.component';
 import { ConsultarComponent } from './components/consultar-solicitacoes/consultar.component';
 import { FormsModule } from '@angular/forms';
+import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
+import { RodapeComponent } from './components/rodape/rodape.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { FormsModule } from '@angular/forms';
     AdicionarEmpresaComponent,
     AtualizarEmpresaComponent,
     ApagarEmpresaComponent,
-    ConsultarComponent
+    ConsultarComponent,
+    CabecalhoComponent,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
