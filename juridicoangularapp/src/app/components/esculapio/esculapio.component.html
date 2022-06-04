@@ -1,0 +1,13 @@
+        <div class="text-light text-center border effectModal">
+            <div *ngIf="!isTranslating">
+                <h2>ESCULÁPIO</h2>
+            <img style="width: 270px;" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/HSAsclepiusKos_retouched.jpg">
+            <p >Adicione o texto</p>
+            <input [(ngModel)]="texto" type="text" class="form-control w-50" >
+            <button class="btn btn-secondary">Sair</button>
+            <button (click)="traduzir()" class="btn btn-primary m-2">Traduzir</button>
+            </div>
+            <div *ngIf="isTranslating">
+                <img style="width: 270px;" [src]="signImage">
+            </div>
+        </div>

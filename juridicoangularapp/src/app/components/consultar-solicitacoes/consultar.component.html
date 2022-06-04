@@ -33,22 +33,27 @@
                         <ul id="top">
                             <li>
                                 <a href="" class="navTop">Pagina inicial
-                                    <img src="./img/setaBaixo.png" alt="">
+                                    <img alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="" class="navTop">Consultas
-                                    <img src="./img/setaBaixo.png" alt="">
+                                    <img  alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="" class="navTop">Serviços
-                                    <img src="./img/setaBaixo.png" alt="">
+                                    <img  alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="" class="navTop">Publicações
-                                    <img src="./img/setaBaixo.png" alt="">
+                                    <img  alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a style="cursor: pointer" (click)="callEsculapio()" class="navTop">Esculapio
+                                    <img  alt="">
                                 </a>
                             </li>
                         </ul>
@@ -59,7 +64,7 @@
                         <form id="form" action="colsulta.html">
                             <input id="classeNumero" class="input" type="text" value="Por Classe e Numero">
                             <input id="classe" class="input" type="text" value="Por Classe ">
-                            <input [(ngModel)]="numeroSolicitacao" id="barraPesquisa" class="input" type="text"
+                            <input id="barraPesquisa" class="input" type="text"
                                 >
                             <input (click)="filtrar()" id="botaoPesquisa"  class="input" type="submit" value="Pesquisar"/>
                         </form>
@@ -77,7 +82,7 @@
                                 <!transformar em vermelho caso ultrapasse o prazo estimado>
                             <p>Prazo estimado:<br>00/00/00</p>
                             <p>Status</p>
-                            <a href=""><img src="./img/olho.png" alt="img not found"></a>
+                            <a href=""><img  alt="img not found"></a>
                         </div>
                         <div class="processo">
                             <p>Processo 002</p>
@@ -87,7 +92,7 @@
                                 <!transformar em vermelho caso ultrapasse o prazo estimado>
                             <p>Prazo estimado:<br>00/00/00</p>
                             <p>Status</p>
-                            <a href=""><img src="./img/olho.png" alt="img not found"></a>
+                            <a href=""><img  alt="img not found"></a>
                         </div>
                         <div class="processo">
                             <p>Processo 003</p>
@@ -136,6 +141,7 @@
                     </div>
                 </div>
             </div>
+            <app-esculapio *ngIf="esculapio"></app-esculapio>
             <footer>
                 <nav>
                     <a href="">Ajuda</a>

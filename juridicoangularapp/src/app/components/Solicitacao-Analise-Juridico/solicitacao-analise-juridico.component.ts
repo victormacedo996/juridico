@@ -42,6 +42,7 @@ export class SolicitacaoAnaliseJuridicoComponent implements OnInit {
 
     response.subscribe(
       (response) => {
+        debugger;
         //vários objetos são salvos nessa variável
         //variável que é passada para a modal para carregar alguns dados
         this.params = response;

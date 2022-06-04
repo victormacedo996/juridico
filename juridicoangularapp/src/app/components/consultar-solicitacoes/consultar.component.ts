@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FiltrarService } from 'src/app/services/filtrar.service';
 
 @Component({
@@ -8,13 +9,17 @@ import { FiltrarService } from 'src/app/services/filtrar.service';
 })
 export class ConsultarComponent implements OnInit {
 
+  esculapio:boolean = false;
   numeroSolicitacao:String= ""
-  constructor(private filtrarService:FiltrarService) { }
+  constructor(private filtrarService:FiltrarService,private router:Router) { }
 
   ngOnInit(): void {
   }
 filtrar(){
   this.filtrarService.filtrar(this.numeroSolicitacao).subscribe()
 
+}
+callEsculapio(){
+  this.esculapio = !this.esculapio
 }
 }

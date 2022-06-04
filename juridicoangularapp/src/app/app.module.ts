@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { EsculapioComponent } from './components/esculapio/esculapio.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     RequisicaoComponent,
     CadastroRequisicaoComponent,
     ConsultarComponent,
-    SolicitacaoAnaliseJuridicoComponent
+    SolicitacaoAnaliseJuridicoComponent,
+    EsculapioComponent,
   ],
   imports: [
     FormsModule,
