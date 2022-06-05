@@ -26,5 +26,4 @@ public class RequisitoTemplateController {
 		List<RequisitoTemplate> requisitoTemplate = requisitoTemplateService.buscarRequisitos();
 		return new ResponseEntity<>(requisitoTemplate, HttpStatus.OK);
 	}
-	
 }

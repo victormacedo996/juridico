@@ -36,8 +36,8 @@
 
             <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
                 <mat-label>Tipo da Solicitação</mat-label>
-                <mat-select [(ngModel)]="this.tipoSolicitacaoId" [ngModelOptions]="{standalone: true}">
-                    <mat-option *ngFor="let solicitacao of this.tipoSolicitacaoParams" [value]="solicitacao.id">
+                <mat-select  [(ngModel)]="this.tipoSolicitacaoId" [ngModelOptions]="{standalone: true}">
+                    <mat-option (click)="filterTipoRequisitoById()" *ngFor="let solicitacao of this.tipoSolicitacaoParams" [value]="solicitacao.id">
                       {{solicitacao.descricao}}
                     </mat-option>
                   </mat-select>
@@ -45,6 +45,16 @@
 
         </div>
         <div class="row campo">
+
+            <mat-form-field *ngIf="this.tipoSolicitacaoId" class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
+                <mat-label>Tipo do Requisito</mat-label>
+                <mat-select [(ngModel)]="this.tipoRequisitoId" [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let solicitacao of this.solicitacaoTipoRequisitoParams" [value]="solicitacao.id">
+                      {{solicitacao.descricao}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+
             <mat-form-field class="example-full-width col-xl-5 col-lg-5 col-md-10 col-sm-11 col-11" appearance="fill">
                 <mat-label>Prioridade do processo</mat-label>
                 <mat-select [(ngModel)]="this.prioridadeId" [ngModelOptions]="{standalone: true}">

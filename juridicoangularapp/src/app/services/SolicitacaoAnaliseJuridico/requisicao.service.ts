@@ -40,7 +40,6 @@ export class RequisicaoService {
         }
     }
   }`;
-    debugger;
     goHorseS2 = JSON.parse(goHorseS2)
     return this.http.post(this.url, goHorseS2);
   }

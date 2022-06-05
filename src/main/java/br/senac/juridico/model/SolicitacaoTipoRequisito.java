@@ -38,6 +38,12 @@ public class SolicitacaoTipoRequisito implements Serializable {
 	public int getId() {
 		return Id;
 	}
+	public SolicitacaoTipo getSolicitacaoTipo() {
+		return solicitacaoTipo;
+	}
+	public void setSolicitacaoTipo(SolicitacaoTipo solicitacaoTipo) {
+		this.solicitacaoTipo = solicitacaoTipo;
+	}
 	public void setId(int id) {
 		Id = id;
 	}
