@@ -14,54 +14,70 @@ import Swal from 'sweetalert2';
 })
 export class SolicitacaoAnaliseJuridicoComponent implements OnInit {
 
-  constructor(private tipoSolicitacao:TipoSolicitacaoService,private prioridadeService:PrioridadeService, private formBuilder: FormBuilder,private requisicao:RequisicaoService) { }
-  params:any;
-  tipoSolicitacaoParams:any;
-  prioridadeParams:any;
-  solicitacaoAnaliseJuridico:soliocitacaoAnaliseJuridico = new soliocitacaoAnaliseJuridico;
+  constructor(private tipoSolicitacao: TipoSolicitacaoService, private prioridadeService: PrioridadeService, private formBuilder: FormBuilder, private requisicao: RequisicaoService) { }
+  params: any;
+  tipoSolicitacaoParams: any;
+  prioridadeParams: any;
+  solicitacaoAnaliseJuridico: soliocitacaoAnaliseJuridico = new soliocitacaoAnaliseJuridico;
   /**
    * propriedades auxiliares que fazem bind no formulário
    */
-  tipoSolicitacaoId?:number;
-  prioridadeId?:number;
+  tipoSolicitacaoId?: number;
+  prioridadeId?: number;
 
-  formulario:any;
+  formulario: any;
   ngOnInit(): void {
     this.carregarParametros();
+    this.loadingAlert();
   }
-  carregarParametros(){
+
+  loadingAlert() {
+    Swal.fire(
+      {
+        title: 'Carregando',
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      }
+    )
+    if(this.params){
+      Swal.close()
+    }
+  }
+  carregarParametros() {
     //Faz requisição para todas as apis responsáveis pela exibição inicial da tela de uma só vez
     let response = forkJoin([
       this.tipoSolicitacao.buscarTipoSolicitacao(),
       this.prioridadeService.buscarPrioridade()
     ]).pipe(
-      map(([tipoSolicitacao,prioridadeService]) => {
-        return { tipoSolicitacao,prioridadeService};
+      map(([tipoSolicitacao, prioridadeService]) => {
+        return { tipoSolicitacao, prioridadeService };
       })
     );
 
     response.subscribe(
       (response) => {
-        debugger;
         //vários objetos são salvos nessa variável
         //variável que é passada para a modal para carregar alguns dados
         this.params = response;
         this.tipoSolicitacaoParams = response.tipoSolicitacao;
         this.prioridadeParams = response.prioridadeService;
+        //chama a função para fechar o swal
+        this.loadingAlert()
       },
       (error) => {
-        alert('não foi possível carregar os dados, recarregue a página')
+        Swal.fire('error', 'Não foi possível carregar os dados, favor confira a sua conxão com a internet e recarregue a página', 'error')
       }
     );
   }
 
-  Salvar(){
+  Salvar() {
     this.solicitacaoAnaliseJuridico.tipoSolicitacao = this.tipoSolicitacaoId
     this.solicitacaoAnaliseJuridico.prioridade = this.prioridadeId
     this.requisicao.criarRequisicao(this.solicitacaoAnaliseJuridico).subscribe(response => {
       Swal.fire('Success', 'Solicitacao criada com sucesso!', 'success');
-      
-    },error =>{
+
+    }, error => {
       Swal.fire('Error', 'Error ao criar a solicitacao', 'error');
     })
   }
