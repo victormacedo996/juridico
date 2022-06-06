@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Empresa } from 'src/app/models/Empresa';
+import { Empresa } from 'src/app/models/empresa';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
 @Component({

@@ -9,12 +9,16 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+
+
+
 @SpringBootApplication
 public class JuridicoApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(JuridicoApplication.class, args);
 	}
+	
 
 	@Bean
 	public CorsFilter corsFilter() {
@@ -31,4 +35,5 @@ public class JuridicoApplication {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
+
 }
