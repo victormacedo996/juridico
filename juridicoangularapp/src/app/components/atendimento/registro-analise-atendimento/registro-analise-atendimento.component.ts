@@ -1,6 +1,9 @@
+import { RegistroAnaliseAtendimento } from './../../../models/RegistroAnaliseAtendimento';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { RegistroAnaliseAtendimentoService } from './registro-analise-atendimento.service';
 import { ConfirmacaoRegistroAnaliseComponent } from '../confirmacao-registro-analise/confirmacao-registro-analise.component';
 
 
@@ -11,7 +14,7 @@ import { ConfirmacaoRegistroAnaliseComponent } from '../confirmacao-registro-ana
 })
 export class RegistroAnaliseAtendimentoComponent implements OnInit {
 
-  
+  registroAtendimento: RegistroAnaliseAtendimento[] | undefined
   solicitacaoForm = new FormGroup({
     titulo: new FormControl(''),
     tipoSolicitacao: new FormControl('',),
@@ -21,12 +24,13 @@ export class RegistroAnaliseAtendimentoComponent implements OnInit {
 });
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private registroAtendimentoService: RegistroAnaliseAtendimentoService
 
   ) { }
 
   ngOnInit(): void {
-    this.getAllRegistros();
+    
   }
 
 
@@ -43,8 +47,14 @@ export class RegistroAnaliseAtendimentoComponent implements OnInit {
     });
   }
 
-
-  public getAllRegistros() {
-
+  public getAllRegistros(): void {
+    this.registroAtendimentoService.listaRegistroAtendimento().subscribe(
+      (response: RegistroAnaliseAtendimento[]) => {
+        this.registroAtendimento = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

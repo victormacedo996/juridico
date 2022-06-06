@@ -9,6 +9,11 @@
     width: 100%;
   }
 
+  .input {
+    max-height: 200px;
+    max-width: 400px;
+  }
+
   :host ::ng-deep .mat-form-field-underline {
     /*height: 0px !important;*/
     display: none;
