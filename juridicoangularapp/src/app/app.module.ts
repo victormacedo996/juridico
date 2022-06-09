@@ -17,6 +17,7 @@ import { RodapeComponent } from './components/rodape/rodape.component';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatTableModule} from '@angular/material/table';
     ApagarEmpresaComponent,
     ConsultarComponent,
     CabecalhoComponent,
-    RodapeComponent
+    RodapeComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
