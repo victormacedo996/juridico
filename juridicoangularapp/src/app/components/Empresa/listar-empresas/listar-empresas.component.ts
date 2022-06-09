@@ -10,9 +10,9 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class ListarEmpresasComponent implements OnInit {
 
-
-  public empresas: Empresa[] | undefined;
-  
+  public empresas: Empresa[] = [];
+  displayedColumns: string[] = ['id', 'nome', 'cnpj', 'status'];
+  dataSource : any = [];
   constructor (private empresaService: EmpresaService){}
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class ListarEmpresasComponent implements OnInit {
     this.empresaService.listarEmpresas().subscribe(
       (response: Empresa[]) => {
         this.empresas = response;
+        this.dataSource = response;
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -31,3 +32,5 @@ export class ListarEmpresasComponent implements OnInit {
   }
 
 }
+
+

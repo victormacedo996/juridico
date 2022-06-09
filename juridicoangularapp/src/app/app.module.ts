@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarEmpresasComponent } from './components/Empresa/listar-empresas/listar-empresas.component';
@@ -14,6 +13,10 @@ import { ConsultarComponent } from './components/consultar-solicitacoes/consulta
 import { FormsModule } from '@angular/forms';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
+
+import {MatIconModule} from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { RodapeComponent } from './components/rodape/rodape.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
