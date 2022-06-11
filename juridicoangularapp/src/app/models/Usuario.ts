@@ -1,4 +1,5 @@
-import { Empresa } from '../models/Empresa';
+import { Empresa } from "./Empresa";
+
 export interface Usuario{
     id: number;
     cpf: string;
